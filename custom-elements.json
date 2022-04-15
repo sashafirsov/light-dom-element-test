@@ -1,0 +1,671 @@
+{
+  "schemaVersion": "1.0.0",
+  "readme": "",
+  "modules": [
+    {
+      "kind": "javascript-module",
+      "path": "src/index.ts",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "LightDomElementTest",
+          "declaration": {
+            "name": "LightDomElementTest",
+            "module": "./LightDomElementTest.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/light-dom-element-test.ts",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "custom-element-definition",
+          "name": "light-dom-element-test",
+          "declaration": {
+            "name": "LightDomElementTest",
+            "module": "/src/LightDomElementTest.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/LightDomElement.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "light DOM element implementation with API compatible with shadow-dom-element",
+          "name": "LightDomElement",
+          "members": [
+            {
+              "kind": "method",
+              "name": "slotsInit",
+              "description": "fetches dependent resources defined by attributes and generates content from template",
+              "return": {
+                "type": {
+                  "text": "Promise<LightDomElement>"
+                }
+              }
+            },
+            {
+              "kind": "field",
+              "name": "promise"
+            }
+          ],
+          "superclass": {
+            "name": "HTMLElement"
+          },
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "LightDomElement",
+          "declaration": {
+            "name": "LightDomElement",
+            "module": "src/LightDomElement.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/LightDomElementTest.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "LightDomElementTest",
+          "members": [
+            {
+              "kind": "field",
+              "name": "title",
+              "type": {
+                "text": "string"
+              },
+              "default": "'Hey there'",
+              "attribute": "title"
+            },
+            {
+              "kind": "field",
+              "name": "counter",
+              "type": {
+                "text": "number"
+              },
+              "default": "5",
+              "attribute": "counter"
+            },
+            {
+              "kind": "method",
+              "name": "__increment"
+            }
+          ],
+          "attributes": [
+            {
+              "name": "title",
+              "type": {
+                "text": "string"
+              },
+              "default": "'Hey there'",
+              "fieldName": "title"
+            },
+            {
+              "name": "counter",
+              "type": {
+                "text": "number"
+              },
+              "default": "5",
+              "fieldName": "counter"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "light-dom-element-test",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "LightDomElementTest",
+          "declaration": {
+            "name": "LightDomElementTest",
+            "module": "src/LightDomElementTest.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/shadow-dom-element.js",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "custom-element-definition",
+          "name": "shadow-dom-element",
+          "declaration": {
+            "name": "ShadowDomElement",
+            "module": "/src/src/ShadowDomElement.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/ShadowDomElement.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "ShadowDomElement",
+          "members": [
+            {
+              "kind": "field",
+              "name": "promise",
+              "type": {
+                "text": "Promise<any>"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "slotsInit"
+            }
+          ],
+          "superclass": {
+            "name": "HTMLElement"
+          },
+          "tagName": "shadow-dom-element",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "ShadowDomElement",
+          "declaration": {
+            "name": "ShadowDomElement",
+            "module": "src/ShadowDomElement.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "stories/index.stories.ts",
+      "declarations": [
+        {
+          "kind": "variable",
+          "name": "Regular"
+        },
+        {
+          "kind": "variable",
+          "name": "CustomTitle"
+        },
+        {
+          "kind": "variable",
+          "name": "CustomCounter"
+        },
+        {
+          "kind": "variable",
+          "name": "SlottedContent"
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "module": "stories/index.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "Regular",
+          "declaration": {
+            "name": "Regular",
+            "module": "stories/index.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "CustomTitle",
+          "declaration": {
+            "name": "CustomTitle",
+            "module": "stories/index.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "CustomCounter",
+          "declaration": {
+            "name": "CustomCounter",
+            "module": "stories/index.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "SlottedContent",
+          "declaration": {
+            "name": "SlottedContent",
+            "module": "stories/index.stories.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "coverage/lcov-report/block-navigation.js",
+      "declarations": [],
+      "exports": []
+    },
+    {
+      "kind": "javascript-module",
+      "path": "coverage/lcov-report/prettify.js",
+      "declarations": [],
+      "exports": []
+    },
+    {
+      "kind": "javascript-module",
+      "path": "coverage/lcov-report/sorter.js",
+      "declarations": [],
+      "exports": []
+    },
+    {
+      "kind": "javascript-module",
+      "path": "dist/src/index.d.ts",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "LightDomElementTest",
+          "declaration": {
+            "name": "LightDomElementTest",
+            "module": "./LightDomElementTest.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "dist/src/index.js",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "LightDomElementTest",
+          "declaration": {
+            "name": "LightDomElementTest",
+            "module": "./LightDomElementTest.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "dist/src/light-dom-element-test.d.ts",
+      "declarations": [],
+      "exports": []
+    },
+    {
+      "kind": "javascript-module",
+      "path": "dist/src/light-dom-element-test.js",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "custom-element-definition",
+          "name": "light-dom-element-test",
+          "declaration": {
+            "name": "LightDomElementTest",
+            "module": "/dist/src/LightDomElementTest.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "dist/src/LightDomElementTest.d.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "LightDomElementTest",
+          "members": [
+            {
+              "kind": "field",
+              "name": "title",
+              "type": {
+                "text": "string"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "counter",
+              "type": {
+                "text": "number"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "__increment",
+              "return": {
+                "type": {
+                  "text": "void"
+                }
+              }
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "light-dom-element-test",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "LightDomElementTest",
+          "declaration": {
+            "name": "LightDomElementTest",
+            "module": "dist/src/LightDomElementTest.d.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "dist/src/LightDomElementTest.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "LightDomElementTest",
+          "members": [
+            {
+              "kind": "method",
+              "name": "__increment"
+            },
+            {
+              "kind": "field",
+              "name": "title",
+              "type": {
+                "text": "string"
+              },
+              "default": "'Hey there'"
+            },
+            {
+              "kind": "field",
+              "name": "counter",
+              "type": {
+                "text": "number"
+              },
+              "default": "5"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "light-dom-element-test",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "LightDomElementTest",
+          "declaration": {
+            "name": "LightDomElementTest",
+            "module": "dist/src/LightDomElementTest.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "dist/src/ShadowDomElement.d.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "ShadowDomElement",
+          "members": [
+            {
+              "kind": "field",
+              "name": "promise",
+              "type": {
+                "text": "Promise<any>"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "slotsInit",
+              "return": {
+                "type": {
+                  "text": "Promise<void>"
+                }
+              }
+            }
+          ],
+          "superclass": {
+            "name": "HTMLElement"
+          },
+          "tagName": "shadow-dom-element",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "ShadowDomElement",
+          "declaration": {
+            "name": "ShadowDomElement",
+            "module": "dist/src/ShadowDomElement.d.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "dist/src/ShadowDomElement.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "ShadowDomElement",
+          "members": [
+            {
+              "kind": "method",
+              "name": "slotsInit"
+            },
+            {
+              "kind": "field",
+              "name": "promise"
+            }
+          ],
+          "superclass": {
+            "name": "HTMLElement"
+          },
+          "tagName": "shadow-dom-element",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "ShadowDomElement",
+          "declaration": {
+            "name": "ShadowDomElement",
+            "module": "dist/src/ShadowDomElement.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "dist/stories/index.stories.d.ts",
+      "declarations": [
+        {
+          "kind": "variable",
+          "name": "_default",
+          "type": {
+            "text": "{\r\n    title: string;\r\n    component: string;\r\n    argTypes: {\r\n        title: {\r\n            control: string;\r\n        };\r\n        counter: {\r\n            control: string;\r\n        };\r\n        textColor: {\r\n            control: string;\r\n        };\r\n    };\r\n}"
+          }
+        },
+        {
+          "kind": "variable",
+          "name": "Regular",
+          "type": {
+            "text": "Story<ArgTypes>"
+          }
+        },
+        {
+          "kind": "variable",
+          "name": "CustomTitle",
+          "type": {
+            "text": "Story<ArgTypes>"
+          }
+        },
+        {
+          "kind": "variable",
+          "name": "CustomCounter",
+          "type": {
+            "text": "Story<ArgTypes>"
+          }
+        },
+        {
+          "kind": "variable",
+          "name": "SlottedContent",
+          "type": {
+            "text": "Story<ArgTypes>"
+          }
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "name": "_default",
+            "module": "dist/stories/index.stories.d.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "Regular",
+          "declaration": {
+            "name": "Regular",
+            "module": "dist/stories/index.stories.d.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "CustomTitle",
+          "declaration": {
+            "name": "CustomTitle",
+            "module": "dist/stories/index.stories.d.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "CustomCounter",
+          "declaration": {
+            "name": "CustomCounter",
+            "module": "dist/stories/index.stories.d.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "SlottedContent",
+          "declaration": {
+            "name": "SlottedContent",
+            "module": "dist/stories/index.stories.d.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "dist/stories/index.stories.js",
+      "declarations": [
+        {
+          "kind": "variable",
+          "name": "Regular"
+        },
+        {
+          "kind": "variable",
+          "name": "CustomTitle"
+        },
+        {
+          "kind": "variable",
+          "name": "CustomCounter"
+        },
+        {
+          "kind": "variable",
+          "name": "SlottedContent"
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "module": "dist/stories/index.stories.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "Regular",
+          "declaration": {
+            "name": "Regular",
+            "module": "dist/stories/index.stories.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "CustomTitle",
+          "declaration": {
+            "name": "CustomTitle",
+            "module": "dist/stories/index.stories.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "CustomCounter",
+          "declaration": {
+            "name": "CustomCounter",
+            "module": "dist/stories/index.stories.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "SlottedContent",
+          "declaration": {
+            "name": "SlottedContent",
+            "module": "dist/stories/index.stories.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "dist/test/light-dom-element-test.test.d.ts",
+      "declarations": [],
+      "exports": []
+    },
+    {
+      "kind": "javascript-module",
+      "path": "dist/test/shadow-dom-element.test.d.ts",
+      "declarations": [],
+      "exports": []
+    }
+  ]
+}

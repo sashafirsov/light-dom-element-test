@@ -13,7 +13,7 @@
   "scripts": {
     "start": "tsc && concurrently -k -r \"tsc --watch --preserveWatchOutput\" \"wds\"",
     "build": "tsc",
-    "prepublish": "tsc",
+    "prepublish": "tsc && custom-elements-manifest analyze --litelement",
     "lint": "eslint --ext .ts,.html . --ignore-path .gitignore && prettier \"**/*.ts\" --check --ignore-path .gitignore",
     "format": "eslint --ext .ts,.html . --fix --ignore-path .gitignore && prettier \"**/*.ts\" --write --ignore-path .gitignore",
     "test": "tsc && wtr --coverage",
@@ -25,6 +25,7 @@
     "lit": "^2.0.0-rc.2"
   },
   "devDependencies": {
+    "@custom-elements-manifest/analyzer": "^0.5.7",
     "@open-wc/eslint-config": "^4.3.0",
     "@open-wc/testing": "next",
     "@typescript-eslint/eslint-plugin": "^4.29.2",
@@ -39,7 +40,7 @@
     "lint-staged": "^10.5.4",
     "prettier": "^2.3.2",
     "tslib": "^2.3.1",
-    "typescript": "^4.3.5"
+    "typescript": "^4.6.3"
   },
   "eslintConfig": {
     "parser": "@typescript-eslint/parser",
@@ -79,5 +80,6 @@
       "eslint --fix",
       "prettier --write"
     ]
-  }
+  },
+  "customElements": "custom-elements.json"
 }
