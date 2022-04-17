@@ -23,11 +23,11 @@ describe('ShadowDomElement test', () => {
     });
     it('passes the a11y audit', async () => {
         const el = await fixture<ShadowDomElement>(
-            html`
-                <shadow-dom-element>
-                    <template>
-                        <button>action</button>
-                </shadow-dom-element>`
+            html` <shadow-dom-element>
+                <template>
+                    <button>action</button>
+                </template>
+            </shadow-dom-element>`
         );
 
         await expect(el).shadowDom.to.be.accessible();
@@ -36,13 +36,12 @@ describe('ShadowDomElement test', () => {
         const el = await fixture<ShadowDomElement>(
             html`<shadow-dom-element>
                 <template>
-                    <button>action</button>
+                    <slot><button>FAIL action</button></slot>
                 </template>
+                <button slot="">action</button>
             </shadow-dom-element>`
         );
-        expect(el.shadowRoot!.querySelector('button')!.innerText).to.equal(
-            'action'
-        );
+        expect($('button', el).txt()).to.equal('action');
     });
     it('replaces slots', async () => {
         const el = await fixture<ShadowDomElement>(
