@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+    <title>light-dom-element demo</title>
+  <style>
+    body {
+      background: #fafafa;
+    }
+  </style>
+</head>
+<body>
+    <light-dom-element>
+        <template>
+            <slot name="slot1"><h5>FAIL heading 5</h5></slot>
+            <slot name="slot2"><button >FAIL action</button></slot>
+        </template>
+        <a slot="slot2" href="#">link</a>
+        <h3 slot="slot1" id="heading" >heading 3</h3>
+    </light-dom-element>
+
+  <script type="module">
+    import '../../src/light-dom-element.js';
+  </script>
+</body>
+</html>

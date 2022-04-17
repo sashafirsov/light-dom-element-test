@@ -19,10 +19,13 @@
         "rootDir": "./",
         "declaration": true,
         "incremental": true,
+        "allowJs": true,
+        "checkJs": true,
         "noImplicitAny": false,
         "noImplicitReturns": true
     },
     "include": [
-        "**/*.ts"
+        "**/*.ts",
+        "src/*.js"
     ]
 }

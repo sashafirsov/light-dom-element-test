@@ -1,59 +1,59 @@
 import { html } from 'lit';
 import { fixture, expect } from '@open-wc/testing';
 import { CssChain as $ } from 'css-chain';
-import ShadowDomElement from '../src/ShadowDomElement.js';
-import '../src/shadow-dom-element.js';
+import LightDomElement from '../src/LightDomElement.js';
+import '../src/light-dom-element.js';
 
-describe('ShadowDomElement test', () => {
+describe('LightDomElement test', () => {
     it('passed title attribute', async () => {
-        const el = await fixture<ShadowDomElement>(
-            html`<shadow-dom-element title="Hey there"></shadow-dom-element>`
+        const el = await fixture<LightDomElement>(
+            html`<light-dom-element title="Hey there"></light-dom-element>`
         );
 
         expect(el.title).to.equal('Hey there');
     });
     it('can override the title via attribute', async () => {
-        const el = await fixture<ShadowDomElement>(
-            html`<shadow-dom-element
+        const el = await fixture<LightDomElement>(
+            html`<light-dom-element
                 title="attribute title"
-            ></shadow-dom-element>`
+            ></light-dom-element>`
         );
 
         expect(el.title).to.equal('attribute title');
     });
     it('passes the a11y audit', async () => {
-        const el = await fixture<ShadowDomElement>(
-            html`
-                <shadow-dom-element>
-                    <template>
-                        <button>action</button>
-                </shadow-dom-element>`
+        const el = await fixture<LightDomElement>(
+            html` <light-dom-element>
+                <template>
+                    <button>action</button>
+                </template>
+            </light-dom-element>`
         );
 
         await expect(el).shadowDom.to.be.accessible();
     });
     it('renders template content', async () => {
-        const el = await fixture<ShadowDomElement>(
-            html`<shadow-dom-element>
+        const el = await fixture<LightDomElement>(
+            html`<light-dom-element>
                 <template>
-                    <button>action</button>
+                    <slot name="slot1"><button>action</button></slot>
                 </template>
-            </shadow-dom-element>`
+                <button slot="slot1">action</button>
+            </light-dom-element>`
         );
-        expect(el.shadowRoot!.querySelector('button')!.innerText).to.equal(
-            'action'
-        );
+        expect($(el).$('button').txt()).to.equal('action');
+        expect($('button', el).txt()).to.equal('action');
     });
     it('replaces slots', async () => {
-        const el = await fixture<ShadowDomElement>(
-            html`<shadow-dom-element>
+        const el = await fixture<LightDomElement>(
+            html`<light-dom-element>
                 <template>
                     <slot name="slot1"><h5>heading 5</h5></slot>
                     <slot name="slot2"><button>action</button></slot>
                 </template>
                 <a slot="slot2" href="#">link</a>
                 <h3 slot="slot1" id="heading">heading 3</h3>
-            </shadow-dom-element>`
+            </light-dom-element>`
         );
         // template slots are replaced
         expect($('h5', el).txt()).to.equal('');

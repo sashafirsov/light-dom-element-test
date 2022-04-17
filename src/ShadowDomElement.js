@@ -1,7 +1,5 @@
-/* eslint-disable no-return-assign  */
-/* eslint-disable wc/attach-shadow-constructor */
-export class ShadowDomElement extends HTMLElement {
-    promise: Promise<any>;
+export default class ShadowDomElement extends HTMLElement {
+    promise;
 
     constructor() {
         super();

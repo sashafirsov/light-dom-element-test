@@ -22,6 +22,7 @@
     "storybook:build": "tsc && build-storybook"
   },
   "dependencies": {
+    "css-chain": "^1.1.2",
     "lit": "^2.0.0-rc.2"
   },
   "devDependencies": {
@@ -53,6 +54,8 @@
     ],
     "rules": {
       "no-unused-vars": "off",
+      "no-return-assign": "off",
+      "wc/attach-shadow-constructor": "off",
       "@typescript-eslint/no-unused-vars": [
         "error"
       ],
