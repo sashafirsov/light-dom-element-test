@@ -1,13 +1,10 @@
-import {CssChain as $} from "css-chain";
+import { CssChain as $ } from "css-chain";
 import ShadowDomElement from "./ShadowDomElement.js";
 
-export default class LightDomElement extends ShadowDomElement {
+export default class LightDomElement extends ShadowDomElement
+{
 
-    applyTemplate( t )
-    {
-        // @ts-ignore
-        $(this).template(t);
-    }
+    applyTemplate( t ){ $( this ).template( t ); }
 
     /**
      *  @typedef ShadowRootInit
@@ -16,16 +13,11 @@ export default class LightDomElement extends ShadowDomElement {
      *  @property {String} [slotAssignment="named"]
      */
     /**
-     * interface ShadowRootInit {
-     *     delegatesFocus?: boolean;
-     *     mode: ShadowRootMode;
-     *     slotAssignment?: SlotAssignmentMode;
-     * }
      * @param {ShadowRootInit} init Information about ShadowRoot.
      * @return {ShadowRoot}
      */
     // @ts-ignore
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    attachShadow( init){ return this.shadowRoot; };
+    attachShadow( init ){ return this.shadowRoot; };
 
 }
