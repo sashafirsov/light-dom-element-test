@@ -8,6 +8,31 @@ export default class LightDomElement extends HTMLElement {
         this.promise = this.slotsInit(); // tbd event on resolving
     }
 
+    applyTemplate( t )
+    {
+        // @ts-ignore
+        $(this).template(t);
+    }
+
+    /**
+     *  @typedef ShadowRootInit
+     *  @property {Boolean} [delegatesFocus=false]
+     *  @property {String} [mode="open"]
+     *  @property {String} [slotAssignment="named"]
+     */
+    /**
+     * interface ShadowRootInit {
+     *     delegatesFocus?: boolean;
+     *     mode: ShadowRootMode;
+     *     slotAssignment?: SlotAssignmentMode;
+     * }
+     * @param {ShadowRootInit} init Information about ShadowRoot.
+     * @return {ShadowRoot}
+     */
+    // @ts-ignore
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    attachShadow( init){ return this.shadowRoot; };
+
     async slotsInit() {
         const getText = async url => (await fetch(url)).text();
         const onAttr = async (attr, cb) => {
@@ -20,8 +45,7 @@ export default class LightDomElement extends HTMLElement {
         );
         await onAttr('src', async url => (this.innerHTML = await getText(url)));
 
-        const shadowRoot = this.attachShadow({ mode: 'open' });
-        const applyTemplate = t => $(this).template(t);
+        const applyTemplate = t => this.applyTemplate(t);
 
         $('template', this ).forEach(applyTemplate);
 
@@ -31,7 +55,8 @@ export default class LightDomElement extends HTMLElement {
             d.innerHTML = await getText(url);
             const t = document.createElement('template');
             d.childNodes.forEach(n => t.content.append(n));
-            shadowRoot.appendChild(t.content);
+            applyTemplate( t );
         });
+        return this;
     }
 }

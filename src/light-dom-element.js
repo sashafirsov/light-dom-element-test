@@ -1,3 +1,3 @@
-import ShadowDomElement from './ShadowDomElement.js';
+import LightDomElement from './LightDomElement.js';
 
-window.customElements.define('shadow-dom-element', ShadowDomElement);
+window.customElements.define('light-dom-element', LightDomElement);

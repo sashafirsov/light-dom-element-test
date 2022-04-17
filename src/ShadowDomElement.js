@@ -6,6 +6,12 @@ export default class ShadowDomElement extends HTMLElement {
         this.promise = this.slotsInit(); // tbd event on resolving
     }
 
+    applyTemplate( t )
+    {
+        // @ts-ignore
+        this.shadowRoot.appendChild(t.content.cloneNode(true));
+    }
+
     async slotsInit() {
         const getText = async url => (await fetch(url)).text();
         const onAttr = async (attr, cb) => {
@@ -18,9 +24,8 @@ export default class ShadowDomElement extends HTMLElement {
         );
         await onAttr('src', async url => (this.innerHTML = await getText(url)));
 
-        const shadowRoot = this.attachShadow({ mode: 'open' });
-        const applyTemplate = t =>
-            shadowRoot.appendChild(t.content.cloneNode(true));
+        this.attachShadow({ mode: 'open' });
+        const applyTemplate = t => this.applyTemplate(t);
         // @ts-ignore
         [...this.getElementsByTagName('template')].forEach(applyTemplate);
 
@@ -30,7 +35,8 @@ export default class ShadowDomElement extends HTMLElement {
             d.innerHTML = await getText(url);
             const t = document.createElement('template');
             d.childNodes.forEach(n => t.content.append(n));
-            shadowRoot.appendChild(t.content);
+            applyTemplate( t );
         });
+        return this;
     }
 }
