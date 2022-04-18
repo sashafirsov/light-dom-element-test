@@ -12,6 +12,7 @@ export default class ShadowDomElement extends HTMLElement
     {
         // @ts-ignore
         this.shadowRoot.appendChild( t.content.cloneNode( true ) );
+        return this;
     }
 
     async slotsInit()
