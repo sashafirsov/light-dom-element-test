@@ -1,5 +1,8 @@
 /// <reference lib="dom" />
 export default class ShadowDomElement extends HTMLElement {
+    /**
+     * resolved when template and slots payload is rendered
+     */
     promise: Promise<this>;
 
     /**

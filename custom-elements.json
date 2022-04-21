@@ -34,38 +34,166 @@
     },
     {
       "kind": "javascript-module",
-      "path": "src/LightDomElement.js",
+      "path": "src/light-dom-element.d.ts",
+      "declarations": [],
+      "exports": []
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/light-dom-element.js",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "custom-element-definition",
+          "name": "light-dom-element",
+          "declaration": {
+            "name": "LightDomElement",
+            "module": "/src/LightDomElement.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/LightDomElement.d.ts",
       "declarations": [
         {
           "kind": "class",
-          "description": "light DOM element implementation with API compatible with shadow-dom-element",
+          "description": "",
           "name": "LightDomElement",
           "members": [
             {
               "kind": "method",
-              "name": "slotsInit",
-              "description": "fetches dependent resources defined by attributes and generates content from template",
+              "name": "applyTemplate",
+              "parameters": [
+                {
+                  "name": "templateElement",
+                  "type": {
+                    "text": "HTMLTemplateElement"
+                  }
+                }
+              ],
               "return": {
                 "type": {
-                  "text": "Promise<LightDomElement>"
+                  "text": ""
                 }
+              },
+              "description": "Applies template content and renders slots",
+              "inheritedFrom": {
+                "name": "ShadowDomElement",
+                "module": "dist/src/ShadowDomElement.js"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "attachShadow",
+              "return": {
+                "type": {
+                  "text": ""
+                }
+              },
+              "parameters": [
+                {
+                  "name": "init",
+                  "type": {
+                    "text": "ShadowRootInit"
+                  },
+                  "description": "Information about ShadowRoot."
+                }
+              ],
+              "description": "Overrides HTMLElement {attachShadow} method to prevent shadow creation.\ncalled from constructor before `slotsInit()`"
+            },
+            {
+              "kind": "method",
+              "name": "slotsInit",
+              "inheritedFrom": {
+                "name": "ShadowDomElement",
+                "module": "dist/src/ShadowDomElement.js"
               }
             },
             {
               "kind": "field",
-              "name": "promise"
+              "name": "promise",
+              "inheritedFrom": {
+                "name": "ShadowDomElement",
+                "module": "dist/src/ShadowDomElement.js"
+              }
             }
           ],
           "superclass": {
-            "name": "HTMLElement"
+            "name": "ShadowDomElement",
+            "module": "/src/ShadowDomElement.js"
           },
+          "tagName": "light-dom-element",
           "customElement": true
         }
       ],
       "exports": [
         {
           "kind": "js",
+          "name": "default",
+          "declaration": {
+            "name": "LightDomElement",
+            "module": "src/LightDomElement.d.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/LightDomElement.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
           "name": "LightDomElement",
+          "members": [
+            {
+              "kind": "method",
+              "name": "applyTemplate",
+              "parameters": [
+                {
+                  "name": "t"
+                }
+              ],
+              "inheritedFrom": {
+                "name": "ShadowDomElement",
+                "module": "dist/src/ShadowDomElement.js"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "attachShadow"
+            },
+            {
+              "kind": "method",
+              "name": "slotsInit",
+              "inheritedFrom": {
+                "name": "ShadowDomElement",
+                "module": "dist/src/ShadowDomElement.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "promise",
+              "inheritedFrom": {
+                "name": "ShadowDomElement",
+                "module": "dist/src/ShadowDomElement.js"
+              }
+            }
+          ],
+          "superclass": {
+            "name": "ShadowDomElement",
+            "module": "/src/ShadowDomElement.js"
+          },
+          "tagName": "light-dom-element",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "default",
           "declaration": {
             "name": "LightDomElement",
             "module": "src/LightDomElement.js"
@@ -144,6 +272,12 @@
     },
     {
       "kind": "javascript-module",
+      "path": "src/shadow-dom-element.d.ts",
+      "declarations": [],
+      "exports": []
+    },
+    {
+      "kind": "javascript-module",
       "path": "src/shadow-dom-element.js",
       "declarations": [],
       "exports": [
@@ -152,14 +286,14 @@
           "name": "shadow-dom-element",
           "declaration": {
             "name": "ShadowDomElement",
-            "module": "/src/src/ShadowDomElement.js"
+            "module": "/src/ShadowDomElement.js"
           }
         }
       ]
     },
     {
       "kind": "javascript-module",
-      "path": "src/ShadowDomElement.ts",
+      "path": "src/ShadowDomElement.d.ts",
       "declarations": [
         {
           "kind": "class",
@@ -170,8 +304,78 @@
               "kind": "field",
               "name": "promise",
               "type": {
-                "text": "Promise<any>"
-              }
+                "text": "Promise<this>"
+              },
+              "description": "resolved when template and slots payload is rendered"
+            },
+            {
+              "kind": "method",
+              "name": "applyTemplate",
+              "return": {
+                "type": {
+                  "text": ""
+                }
+              },
+              "parameters": [
+                {
+                  "name": "templateElement",
+                  "type": {
+                    "text": "HTMLTemplateElement"
+                  }
+                }
+              ],
+              "description": "applies template content and renders slots"
+            },
+            {
+              "kind": "method",
+              "name": "slotsInit",
+              "return": {
+                "type": {
+                  "text": ""
+                }
+              },
+              "description": "reads payload and template from body or by attributes, apply template and renders slots"
+            }
+          ],
+          "superclass": {
+            "name": "HTMLElement"
+          },
+          "tagName": "shadow-dom-element",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "name": "ShadowDomElement",
+            "module": "src/ShadowDomElement.d.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/ShadowDomElement.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "ShadowDomElement",
+          "members": [
+            {
+              "kind": "field",
+              "name": "promise"
+            },
+            {
+              "kind": "method",
+              "name": "applyTemplate",
+              "parameters": [
+                {
+                  "name": "t"
+                }
+              ]
             },
             {
               "kind": "method",
@@ -188,10 +392,10 @@
       "exports": [
         {
           "kind": "js",
-          "name": "ShadowDomElement",
+          "name": "default",
           "declaration": {
             "name": "ShadowDomElement",
-            "module": "src/ShadowDomElement.ts"
+            "module": "src/ShadowDomElement.js"
           }
         }
       ]
@@ -330,6 +534,164 @@
     },
     {
       "kind": "javascript-module",
+      "path": "dist/src/light-dom-element.d.ts",
+      "declarations": [],
+      "exports": []
+    },
+    {
+      "kind": "javascript-module",
+      "path": "dist/src/light-dom-element.js",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "custom-element-definition",
+          "name": "light-dom-element",
+          "declaration": {
+            "name": "LightDomElement",
+            "module": "/dist/src/LightDomElement.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "dist/src/LightDomElement.d.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "LightDomElement",
+          "members": [
+            {
+              "kind": "method",
+              "name": "applyTemplate",
+              "parameters": [
+                {
+                  "name": "t",
+                  "type": {
+                    "text": "any"
+                  }
+                }
+              ],
+              "return": {
+                "type": {
+                  "text": "LightDomElement"
+                }
+              },
+              "inheritedFrom": {
+                "name": "ShadowDomElement",
+                "module": "dist/src/ShadowDomElement.js"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "attachShadow",
+              "return": {
+                "type": {
+                  "text": "void"
+                }
+              }
+            },
+            {
+              "kind": "method",
+              "name": "slotsInit",
+              "inheritedFrom": {
+                "name": "ShadowDomElement",
+                "module": "dist/src/ShadowDomElement.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "promise",
+              "inheritedFrom": {
+                "name": "ShadowDomElement",
+                "module": "dist/src/ShadowDomElement.js"
+              }
+            }
+          ],
+          "superclass": {
+            "name": "ShadowDomElement",
+            "module": "/dist/src/ShadowDomElement.js"
+          },
+          "tagName": "light-dom-element",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "name": "LightDomElement",
+            "module": "dist/src/LightDomElement.d.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "dist/src/LightDomElement.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "LightDomElement",
+          "members": [
+            {
+              "kind": "method",
+              "name": "applyTemplate",
+              "parameters": [
+                {
+                  "name": "t"
+                }
+              ],
+              "inheritedFrom": {
+                "name": "ShadowDomElement",
+                "module": "dist/src/ShadowDomElement.js"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "attachShadow"
+            },
+            {
+              "kind": "method",
+              "name": "slotsInit",
+              "inheritedFrom": {
+                "name": "ShadowDomElement",
+                "module": "dist/src/ShadowDomElement.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "promise",
+              "inheritedFrom": {
+                "name": "ShadowDomElement",
+                "module": "dist/src/ShadowDomElement.js"
+              }
+            }
+          ],
+          "superclass": {
+            "name": "ShadowDomElement",
+            "module": "/dist/src/ShadowDomElement.js"
+          },
+          "tagName": "light-dom-element",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "name": "LightDomElement",
+            "module": "dist/src/LightDomElement.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
       "path": "dist/src/LightDomElementTest.d.ts",
       "declarations": [
         {
@@ -431,6 +793,27 @@
     },
     {
       "kind": "javascript-module",
+      "path": "dist/src/shadow-dom-element.d.ts",
+      "declarations": [],
+      "exports": []
+    },
+    {
+      "kind": "javascript-module",
+      "path": "dist/src/shadow-dom-element.js",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "custom-element-definition",
+          "name": "shadow-dom-element",
+          "declaration": {
+            "name": "ShadowDomElement",
+            "module": "/dist/src/ShadowDomElement.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
       "path": "dist/src/ShadowDomElement.d.ts",
       "declarations": [
         {
@@ -442,17 +825,36 @@
               "kind": "field",
               "name": "promise",
               "type": {
-                "text": "Promise<any>"
+                "text": "Promise<this>"
               }
+            },
+            {
+              "kind": "method",
+              "name": "applyTemplate",
+              "return": {
+                "type": {
+                  "text": ""
+                }
+              },
+              "parameters": [
+                {
+                  "name": "templateElement",
+                  "type": {
+                    "text": "HTMLTemplateElement"
+                  }
+                }
+              ],
+              "description": "applies template content and renders slots"
             },
             {
               "kind": "method",
               "name": "slotsInit",
               "return": {
                 "type": {
-                  "text": "Promise<void>"
+                  "text": ""
                 }
-              }
+              },
+              "description": "reads payload and template from body or by attributes, apply template and renders slots"
             }
           ],
           "superclass": {
@@ -465,7 +867,7 @@
       "exports": [
         {
           "kind": "js",
-          "name": "ShadowDomElement",
+          "name": "default",
           "declaration": {
             "name": "ShadowDomElement",
             "module": "dist/src/ShadowDomElement.d.ts"
@@ -482,6 +884,15 @@
           "description": "",
           "name": "ShadowDomElement",
           "members": [
+            {
+              "kind": "method",
+              "name": "applyTemplate",
+              "parameters": [
+                {
+                  "name": "t"
+                }
+              ]
+            },
             {
               "kind": "method",
               "name": "slotsInit"
@@ -501,7 +912,7 @@
       "exports": [
         {
           "kind": "js",
-          "name": "ShadowDomElement",
+          "name": "default",
           "declaration": {
             "name": "ShadowDomElement",
             "module": "dist/src/ShadowDomElement.js"
@@ -658,6 +1069,12 @@
     {
       "kind": "javascript-module",
       "path": "dist/test/light-dom-element-test.test.d.ts",
+      "declarations": [],
+      "exports": []
+    },
+    {
+      "kind": "javascript-module",
+      "path": "dist/test/light-dom-element.test.d.ts",
       "declarations": [],
       "exports": []
     },

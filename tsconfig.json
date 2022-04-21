@@ -20,7 +20,7 @@
         "declaration": true,
         "incremental": true,
         "allowJs": true,
-        "checkJs": true,
+        "checkJs": false,
         "noImplicitAny": false,
         "noImplicitReturns": true
     },

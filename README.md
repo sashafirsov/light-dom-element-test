@@ -1,6 +1,8 @@
-# \<light-dom-element-test>
-
-This webcomponent follows the [open-wc](https://github.com/open-wc/open-wc) recommendation.
+# \<shadows-dom-element> & \<light-dom-element> test 
+This project is a test and build suite for 
+[shadow-dom-element](https://github.com/sashafirsov/shadow-dom-element) & 
+[light-dom-element](https://github.com/sashafirsov/light-dom-element)  
+web components which perform same task of html template rendering and expose identical API.
 
 ## Installation
 
@@ -10,12 +12,10 @@ npm i light-dom-element-test
 
 ## Usage
 
-```html
-<script type="module">
-  import 'light-dom-element-test/light-dom-element-test.js';
-</script>
-
-<light-dom-element-test></light-dom-element-test>
+```bash
+npm run build
+npm run test
+npm run test:watch
 ```
 
 ## Linting and formatting
