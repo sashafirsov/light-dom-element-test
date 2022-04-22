@@ -1,8 +1,7 @@
 import { html } from 'lit';
 import { fixture, expect } from '@open-wc/testing';
 import { CssChain as $ } from 'css-chain';
-import ShadowDomElement from '../src/ShadowDomElement.js';
-import '../src/shadow-dom-element.js';
+import ShadowDomElement from '../src/shadow-dom-element.js';
 
 describe('ShadowDomElement test', () => {
     it('passed title attribute', async () => {

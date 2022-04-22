@@ -12,17 +12,17 @@
   },
   "scripts": {
     "start": "tsc && concurrently -k -r \"tsc --watch --preserveWatchOutput\" \"wds\"",
-    "build": "tsc && cp \"src/*.d.ts\" \"dist/src/\"",
+    "build": "bash build.sh",
     "prepublish": "tsc && custom-elements-manifest analyze --litelement && node ./md-generate.mjs",
     "lint": "eslint --ext .ts,.html . --ignore-path .gitignore && prettier \"**/*.ts\" --check --ignore-path .gitignore",
     "format": "eslint --ext .ts,.html . --fix --ignore-path .gitignore && prettier \"**/*.ts\" --write --ignore-path .gitignore",
-    "test": "tsc && wtr --coverage",
+    "test": "bash test.sh",
     "test:watch": "tsc && concurrently -k -r \"tsc --watch --preserveWatchOutput\" \"wtr --watch\"",
     "storybook": "tsc && concurrently -k -r \"tsc --watch --preserveWatchOutput\" \"wds -c .storybook/server.mjs\"",
     "storybook:build": "tsc && build-storybook"
   },
   "dependencies": {
-    "css-chain": "^1.1.2",
+    "css-chain": "^1.1.3",
     "lit": "^2.0.0-rc.2"
   },
   "devDependencies": {

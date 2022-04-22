@@ -1,8 +1,7 @@
 import { html } from 'lit';
 import { fixture, expect } from '@open-wc/testing';
 import { CssChain as $ } from 'css-chain';
-import LightDomElement from '../src/LightDomElement.js';
-import '../src/light-dom-element.js';
+import LightDomElement from '../src/light-dom-element.js';
 
 describe('LightDomElement test', () => {
     it('passed title attribute', async () => {
