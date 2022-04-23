@@ -85,10 +85,10 @@ To run a local development server that serves the basic demo located in `demo/in
 [github-url]:     https://github.com/sashafirsov/shadow-dom-element-test
 [shadow-url]:     https://github.com/sashafirsov/shadow-dom-element
 [light-url]:      https://github.com/sashafirsov/light-dom-element
-[shadow-demo]:    https://unpkg.com/light-dom-element-test@0.0.1/demo/shadow-dom/index.html
-[light-demo]:     https://unpkg.com/light-dom-element-test@0.0.1/demo/light-dom/index.html
+[shadow-demo]:    https://unpkg.com/light-dom-element-test@0.0.2/demo/shadow-dom/index.html
+[light-demo]:     https://unpkg.com/light-dom-element-test@0.0.2/demo/light-dom/index.html
 
 [npm-image]:      https://img.shields.io/npm/v/light-dom-element-test.svg
 [npm-url]:        https://npmjs.org/package/light-dom-element-test
-[coverage-image]: https://unpkg.com/light-dom-element-test@0.0.1/coverage/coverage.svg
-[coverage-url]:   https://unpkg.com/light-dom-element-test@0.0.1/coverage/lcov-report/index.html
+[coverage-image]: https://unpkg.com/light-dom-element-test@0.0.2/coverage/coverage.svg
+[coverage-url]:   https://unpkg.com/light-dom-element-test@0.0.2/coverage/lcov-report/index.html
