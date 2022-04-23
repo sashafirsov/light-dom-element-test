@@ -3,6 +3,9 @@ import { fixture, expect } from '@open-wc/testing';
 import { CssChain as $ } from 'css-chain';
 import '../src/shadow-dom-element.js';
 
+const slotsUrl = new URL('./slots.html', import.meta.url).href;
+const templateUrl = new URL('./template.html', import.meta.url).href;
+
 describe('ShadowDomElement test', () => {
     it('passed title attribute', async () => {
         const el = await fixture(
@@ -87,4 +90,18 @@ describe('ShadowDomElement test', () => {
         expect($('a', el).txt()).to.equal('link');
         expect($('h3', el).id).to.equal('heading');
     });
+    it('src & code attributes', async () => {
+        const el = await fixture(
+            html`<shadow-dom-element src="${slotsUrl}" code="${templateUrl}"></shadow-dom-element>`
+        );
+        await el.promise;
+
+        // template slots are replaced
+        expect($('h5', el).txt()).to.equal('');
+        expect($('button', el).length).to.equal(0);
+        // by slots
+        expect($('a', el).txt()).to.equal('link 😃');
+        expect($('h3', el).id).to.equal('heading');
+    });
+
 });
