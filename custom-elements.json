@@ -44,6 +44,11 @@
             {
               "kind": "method",
               "name": "applyTemplate",
+              "return": {
+                "type": {
+                  "text": ""
+                }
+              },
               "parameters": [
                 {
                   "name": "templateElement",
@@ -52,15 +57,10 @@
                   }
                 }
               ],
-              "return": {
-                "type": {
-                  "text": ""
-                }
-              },
               "description": "Applies template content and renders slots",
               "inheritedFrom": {
                 "name": "ShadowDomElement",
-                "module": "dist/src/shadow-dom-element.js"
+                "module": "dist/src/shadow-dom-element.d.ts"
               }
             },
             {
@@ -83,32 +83,29 @@
               "description": "Overrides HTMLElement {attachShadow} method to prevent shadow creation.\ncalled from constructor before `slotsInit()`"
             },
             {
-              "kind": "method",
-              "name": "fetch",
-              "parameters": [
-                {
-                  "name": "url"
-                }
-              ],
+              "kind": "field",
+              "name": "promise",
+              "type": {
+                "text": "Promise<this>"
+              },
+              "description": "resolved when template and slots payload is rendered",
               "inheritedFrom": {
                 "name": "ShadowDomElement",
-                "module": "dist/src/shadow-dom-element.js"
+                "module": "dist/src/shadow-dom-element.d.ts"
               }
             },
             {
               "kind": "method",
               "name": "slotsInit",
+              "return": {
+                "type": {
+                  "text": ""
+                }
+              },
+              "description": "reads payload and template from body or by attributes, apply template and renders slots",
               "inheritedFrom": {
                 "name": "ShadowDomElement",
-                "module": "dist/src/shadow-dom-element.js"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "promise",
-              "inheritedFrom": {
-                "name": "ShadowDomElement",
-                "module": "dist/src/shadow-dom-element.js"
+                "module": "dist/src/shadow-dom-element.d.ts"
               }
             }
           ],
@@ -143,14 +140,20 @@
             {
               "kind": "method",
               "name": "applyTemplate",
+              "return": {
+                "type": {
+                  "text": ""
+                }
+              },
               "parameters": [
                 {
                   "name": "t"
                 }
               ],
+              "description": "applies template content and renders slots",
               "inheritedFrom": {
                 "name": "ShadowDomElement",
-                "module": "dist/src/shadow-dom-element.js"
+                "module": "dist/src/shadow-dom-element.d.ts"
               }
             },
             {
@@ -158,32 +161,29 @@
               "name": "attachShadow"
             },
             {
-              "kind": "method",
-              "name": "fetch",
-              "parameters": [
-                {
-                  "name": "url"
-                }
-              ],
+              "kind": "field",
+              "name": "promise",
+              "type": {
+                "text": "Promise<this>"
+              },
+              "description": "resolved when template and slots payload is rendered",
               "inheritedFrom": {
                 "name": "ShadowDomElement",
-                "module": "dist/src/shadow-dom-element.js"
+                "module": "dist/src/shadow-dom-element.d.ts"
               }
             },
             {
               "kind": "method",
               "name": "slotsInit",
+              "return": {
+                "type": {
+                  "text": ""
+                }
+              },
+              "description": "reads payload and template from body or by attributes, apply template and renders slots",
               "inheritedFrom": {
                 "name": "ShadowDomElement",
-                "module": "dist/src/shadow-dom-element.js"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "promise",
-              "inheritedFrom": {
-                "name": "ShadowDomElement",
-                "module": "dist/src/shadow-dom-element.js"
+                "module": "dist/src/shadow-dom-element.d.ts"
               }
             }
           ],
@@ -553,6 +553,11 @@
             {
               "kind": "method",
               "name": "applyTemplate",
+              "return": {
+                "type": {
+                  "text": ""
+                }
+              },
               "parameters": [
                 {
                   "name": "templateElement",
@@ -561,15 +566,10 @@
                   }
                 }
               ],
-              "return": {
-                "type": {
-                  "text": ""
-                }
-              },
               "description": "Applies template content and renders slots",
               "inheritedFrom": {
                 "name": "ShadowDomElement",
-                "module": "dist/src/shadow-dom-element.js"
+                "module": "dist/src/shadow-dom-element.d.ts"
               }
             },
             {
@@ -592,32 +592,29 @@
               "description": "Overrides HTMLElement {attachShadow} method to prevent shadow creation.\ncalled from constructor before `slotsInit()`"
             },
             {
-              "kind": "method",
-              "name": "fetch",
-              "parameters": [
-                {
-                  "name": "url"
-                }
-              ],
+              "kind": "field",
+              "name": "promise",
+              "type": {
+                "text": "Promise<this>"
+              },
+              "description": "resolved when template and slots payload is rendered",
               "inheritedFrom": {
                 "name": "ShadowDomElement",
-                "module": "dist/src/shadow-dom-element.js"
+                "module": "dist/src/shadow-dom-element.d.ts"
               }
             },
             {
               "kind": "method",
               "name": "slotsInit",
+              "return": {
+                "type": {
+                  "text": ""
+                }
+              },
+              "description": "reads payload and template from body or by attributes, apply template and renders slots",
               "inheritedFrom": {
                 "name": "ShadowDomElement",
-                "module": "dist/src/shadow-dom-element.js"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "promise",
-              "inheritedFrom": {
-                "name": "ShadowDomElement",
-                "module": "dist/src/shadow-dom-element.js"
+                "module": "dist/src/shadow-dom-element.d.ts"
               }
             }
           ],
@@ -652,14 +649,20 @@
             {
               "kind": "method",
               "name": "applyTemplate",
+              "return": {
+                "type": {
+                  "text": ""
+                }
+              },
               "parameters": [
                 {
                   "name": "t"
                 }
               ],
+              "description": "applies template content and renders slots",
               "inheritedFrom": {
                 "name": "ShadowDomElement",
-                "module": "dist/src/shadow-dom-element.js"
+                "module": "dist/src/shadow-dom-element.d.ts"
               }
             },
             {
@@ -667,32 +670,29 @@
               "name": "attachShadow"
             },
             {
-              "kind": "method",
-              "name": "fetch",
-              "parameters": [
-                {
-                  "name": "url"
-                }
-              ],
+              "kind": "field",
+              "name": "promise",
+              "type": {
+                "text": "Promise<this>"
+              },
+              "description": "resolved when template and slots payload is rendered",
               "inheritedFrom": {
                 "name": "ShadowDomElement",
-                "module": "dist/src/shadow-dom-element.js"
+                "module": "dist/src/shadow-dom-element.d.ts"
               }
             },
             {
               "kind": "method",
               "name": "slotsInit",
+              "return": {
+                "type": {
+                  "text": ""
+                }
+              },
+              "description": "reads payload and template from body or by attributes, apply template and renders slots",
               "inheritedFrom": {
                 "name": "ShadowDomElement",
-                "module": "dist/src/shadow-dom-element.js"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "promise",
-              "inheritedFrom": {
-                "name": "ShadowDomElement",
-                "module": "dist/src/shadow-dom-element.js"
+                "module": "dist/src/shadow-dom-element.d.ts"
               }
             }
           ],
@@ -895,14 +895,18 @@
         {
           "kind": "class",
           "description": "",
-          "name": "ShadowDomElement",
+          "name": "c",
           "members": [
+            {
+              "kind": "field",
+              "name": "promise"
+            },
             {
               "kind": "method",
               "name": "fetch",
               "parameters": [
                 {
-                  "name": "url"
+                  "name": "e"
                 }
               ]
             },
@@ -911,17 +915,13 @@
               "name": "applyTemplate",
               "parameters": [
                 {
-                  "name": "t"
+                  "name": "e"
                 }
               ]
             },
             {
               "kind": "method",
               "name": "slotsInit"
-            },
-            {
-              "kind": "field",
-              "name": "promise"
             }
           ],
           "superclass": {
@@ -936,7 +936,7 @@
           "kind": "js",
           "name": "default",
           "declaration": {
-            "name": "ShadowDomElement",
+            "name": "c",
             "module": "dist/src/shadow-dom-element.js"
           }
         },
@@ -944,7 +944,7 @@
           "kind": "custom-element-definition",
           "name": "shadow-dom-element",
           "declaration": {
-            "name": "ShadowDomElement",
+            "name": "c",
             "module": "dist/src/shadow-dom-element.js"
           }
         }
@@ -1110,7 +1110,7 @@
     },
     {
       "kind": "javascript-module",
-      "path": "dist/test/shadow-dom-element.test.d.ts",
+      "path": "dist/test/shadow-dom-element-ts.test.d.ts",
       "declarations": [],
       "exports": []
     }

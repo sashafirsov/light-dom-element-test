@@ -1,8 +1,7 @@
 rm -rf dist
 bash ./test.sh
-cp src/*.d.ts dist/src
 
-PACKAGE_VERSION=$(node -pe "require('css-chain/package.json').version")
+PACKAGE_VERSION=$(node -pe "require('shadow-dom-element/package.json').version")
 echo $PACKAGE_VERSION
 
 #mkdir dist/demo
