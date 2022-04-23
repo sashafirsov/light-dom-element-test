@@ -10,7 +10,7 @@
 /npm-debug.log
 
 ## testing
-/coverage/
+#/coverage/ - removed from ignore as used in CDN
 
 ## temp folders
 /.tmp/
