@@ -60,4 +60,31 @@ describe('ShadowDomElement test', () => {
         expect($('a', el).txt()).to.equal('link');
         expect($('h3', el).id).to.equal('heading');
     });
+    it('srcset & for attributes', async () => {
+        const container = await fixture(
+            html`
+                <div>
+                    <template id="template1">
+                        <slot name="slot1"><h5>heading 5</h5></slot>
+                        <slot name="slot2"><button>action</button></slot>
+                    </template>
+                    <div id="slots-data">
+                        <a slot="slot2" href="#">link</a>
+                        <h3 slot="slot1" id="heading">heading 3</h3>
+                    </div>
+                    <div id="el-injection"> otherwise document.GetElementById() does not work</div>
+                </div>`
+        );
+        const injection = $('#el-injection',container);
+        injection.innerHTML = `<shadow-dom-element srcset="slots-data" for="template1" ></shadow-dom-element>`;
+        const el = $('shadow-dom-element', container )[0];
+        await el.promise;
+
+        // template slots are replaced
+        expect($('h5', el).txt()).to.equal('');
+        expect($('button', el).length).to.equal(0);
+        // by slots
+        expect($('a', el).txt()).to.equal('link');
+        expect($('h3', el).id).to.equal('heading');
+    });
 });
