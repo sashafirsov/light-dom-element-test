@@ -1,0 +1,1 @@
+../node_modules/light-dom-element/light-dom-element.d.ts
