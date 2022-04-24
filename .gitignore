@@ -18,6 +18,8 @@
 # build
 /_site/
 #/dist/ - used in CDN
+dist/tsconfig.tsbuildinfo
+
 /out-tsc/
 
 storybook-static
