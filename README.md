@@ -82,7 +82,7 @@ npm start
 To run a local development server that serves the basic demo located in `demo/index.html`
 
 [github-ico]:     https://cdnjs.cloudflare.com/ajax/libs/octicons/8.5.0/svg/mark-github.svg
-[github-url]:     https://github.com/sashafirsov/shadow-dom-element-test
+[github-url]:     https://github.com/sashafirsov/light-dom-element-test
 [shadow-url]:     https://github.com/sashafirsov/shadow-dom-element
 [light-url]:      https://github.com/sashafirsov/light-dom-element
 [shadow-demo]:    https://unpkg.com/light-dom-element-test@0.0.3/demo/shadow-dom/index.html
