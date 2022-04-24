@@ -1,3 +1,9 @@
+# to be copied by preinstall.sh
+src/light-dom-element.d.ts
+src/light-dom-element.js
+src/shadow-dom-element.d.ts
+src/shadow-dom-element.js
+
 ## editors
 /.idea
 /.vscode
