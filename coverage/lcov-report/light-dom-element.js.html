@@ -25,14 +25,14 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>12/12</span>
+                <span class='fraction'>11/11</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">80% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>4/5</span>
+                <span class='fraction'>3/3</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>12/12</span>
+                <span class='fraction'>11/11</span>
             </div>
         
             
@@ -74,39 +74,36 @@
 <a name='L9'></a><a href='#L9'>9</a>
 <a name='L10'></a><a href='#L10'>10</a>
 <a name='L11'></a><a href='#L11'>11</a>
-<a name='L12'></a><a href='#L12'>12</a>
-<a name='L13'></a><a href='#L13'>13</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { CssChain as $ } from "css-chain";
-import ShadowDomElement from "shadow-dom-element/shadow-dom-element.js";
-&nbsp;
-export default class LightDomElement extends ShadowDomElement
-{
-    applyTemplate( t ){ $( this ).template( t ); return this; }
-&nbsp;
-    attachShadow(){};
-}
-&nbsp;
-((ce,tag)=&gt;ce.get(tag) || ce.define(tag, LightDomElement))(window.customElements,'light-dom-element');
-window.customElements.get('light-dom-element') <span class="branch-0 cbranch-no" title="branch not covered" >|| window.customElements.define('light-dom-element', LightDomElement);</span>
-&nbsp;</pre></td></tr></table></pre>
+<a name='L12'></a><a href='#L12'>12</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">0</span>
+<span class="cline-any cline-no">0</span>
+<span class="cline-any cline-no">0</span>
+<span class="cline-any cline-no">0</span>
+<span class="cline-any cline-no">0</span>
+<span class="cline-any cline-no">0</span>
+<span class="cline-any cline-no">0</span>
+<span class="cline-any cline-no">0</span>
+<span class="cline-any cline-no">0</span>
+<span class="cline-any cline-no">0</span>
+<span class="cline-any cline-no">0</span>
+<span class="cline-any cline-no">0</span></td><td class="text"><pre class="prettyprint lang-js">Unable to lookup source: C:\aWork\light-dom-element-test\__wds-outside-root__\1\light-dom-element\light-dom-element.js (ENOENT: no such file or directory, open 'C:\aWork\light-dom-element-test\__wds-outside-root__\1\light-dom-element\light-dom-element.js')
+Error: Unable to lookup source: C:\aWork\light-dom-element-test\__wds-outside-root__\1\light-dom-element\light-dom-element.js (ENOENT: no such file or directory, open 'C:\aWork\light-dom-element-test\__wds-outside-root__\1\light-dom-element\light-dom-element.js')
+    at Context.defaultSourceLookup [as sourceFinder] (C:\aWork\light-dom-element-test\node_modules\istanbul-lib-report\lib\context.js:17:15)
+    at Context.getSource (C:\aWork\light-dom-element-test\node_modules\istanbul-lib-report\lib\context.js:71:21)
+    at annotateSourceCode (C:\aWork\light-dom-element-test\node_modules\istanbul-reports\lib\html\annotator.js:232:40)
+    at HtmlReport.onDetail (C:\aWork\light-dom-element-test\node_modules\istanbul-reports\lib\html\index.js:414:33)
+    at LcovReport.<computed> [as onDetail] (C:\aWork\light-dom-element-test\node_modules\istanbul-reports\lib\lcov\index.js:28:23)
+    at Visitor.value (C:\aWork\light-dom-element-test\node_modules\istanbul-lib-report\lib\tree.js:38:38)
+    at ReportNode.visit (C:\aWork\light-dom-element-test\node_modules\istanbul-lib-report\lib\tree.js:88:21)
+    at C:\aWork\light-dom-element-test\node_modules\istanbul-lib-report\lib\tree.js:92:19
+    at Array.forEach (<anonymous>)
+    at ReportNode.visit (C:\aWork\light-dom-element-test\node_modules\istanbul-lib-report\lib\tree.js:91:28)</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
             </div><!-- /wrapper -->
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at Sat Apr 23 2022 16:57:42 GMT-0700 (Pacific Daylight Time)
+                at Sat Apr 23 2022 19:49:02 GMT-0700 (Pacific Daylight Time)
             </div>
         <script src="prettify.js"></script>
         <script>
