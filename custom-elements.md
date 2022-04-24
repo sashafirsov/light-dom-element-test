@@ -88,12 +88,12 @@
 
 ### Methods
 
-| Name            | Privacy | Description                                                                             | Parameters    | Return | Inherited From   |
-| --------------- | ------- | --------------------------------------------------------------------------------------- | ------------- | ------ | ---------------- |
-| `applyTemplate` |         | applies template content and renders slots                                              | `t`           |        | ShadowDomElement |
-| `attachShadow`  |         |                                                                                         |               |        |                  |
-| `fetch`         |         | override to load and process URL before returning a HTML string with data within slots. | `url: string` |        | ShadowDomElement |
-| `slotsInit`     |         | reads payload and template from body or by attributes, apply template and renders slots |               |        | ShadowDomElement |
+| Name            | Privacy | Description                                                                                                           | Parameters    | Return | Inherited From   |
+| --------------- | ------- | --------------------------------------------------------------------------------------------------------------------- | ------------- | ------ | ---------------- |
+| `applyTemplate` |         | applies template content and renders slots, called from \`slotsInit()\`                                               | `t`           |        | ShadowDomElement |
+| `attachShadow`  |         |                                                                                                                       |               |        |                  |
+| `fetch`         |         | override to load and process URL before returning a HTML string with data within slots.                               | `url: string` |        | ShadowDomElement |
+| `slotsInit`     |         | reads payload and template from body or by attributes, apply template and renders slots&#xA;, called from constructor |               |        | ShadowDomElement |
 
 <hr/>
 
@@ -160,11 +160,11 @@
 
 ### Methods
 
-| Name            | Privacy | Description                                                                             | Parameters                             | Return | Inherited From |
-| --------------- | ------- | --------------------------------------------------------------------------------------- | -------------------------------------- | ------ | -------------- |
-| `applyTemplate` |         | applies template content and renders slots                                              | `templateElement: HTMLTemplateElement` |        |                |
-| `fetch`         |         | override to load and process URL before returning a HTML string with data within slots. | `url: string`                          |        |                |
-| `slotsInit`     |         | reads payload and template from body or by attributes, apply template and renders slots |                                        |        |                |
+| Name            | Privacy | Description                                                                                                           | Parameters                             | Return | Inherited From |
+| --------------- | ------- | --------------------------------------------------------------------------------------------------------------------- | -------------------------------------- | ------ | -------------- |
+| `applyTemplate` |         | applies template content and renders slots, called from \`slotsInit()\`                                               | `templateElement: HTMLTemplateElement` |        |                |
+| `fetch`         |         | override to load and process URL before returning a HTML string with data within slots.                               | `url: string`                          |        |                |
+| `slotsInit`     |         | reads payload and template from body or by attributes, apply template and renders slots&#xA;, called from constructor |                                        |        |                |
 
 <hr/>
 
@@ -282,12 +282,12 @@
 
 ### Methods
 
-| Name            | Privacy | Description                                                                             | Parameters    | Return | Inherited From   |
-| --------------- | ------- | --------------------------------------------------------------------------------------- | ------------- | ------ | ---------------- |
-| `applyTemplate` |         | applies template content and renders slots                                              | `t`           |        | ShadowDomElement |
-| `attachShadow`  |         |                                                                                         |               |        |                  |
-| `fetch`         |         | override to load and process URL before returning a HTML string with data within slots. | `url: string` |        | ShadowDomElement |
-| `slotsInit`     |         | reads payload and template from body or by attributes, apply template and renders slots |               |        | ShadowDomElement |
+| Name            | Privacy | Description                                                                                                           | Parameters    | Return | Inherited From   |
+| --------------- | ------- | --------------------------------------------------------------------------------------------------------------------- | ------------- | ------ | ---------------- |
+| `applyTemplate` |         | applies template content and renders slots, called from \`slotsInit()\`                                               | `t`           |        | ShadowDomElement |
+| `attachShadow`  |         |                                                                                                                       |               |        |                  |
+| `fetch`         |         | override to load and process URL before returning a HTML string with data within slots.                               | `url: string` |        | ShadowDomElement |
+| `slotsInit`     |         | reads payload and template from body or by attributes, apply template and renders slots&#xA;, called from constructor |               |        | ShadowDomElement |
 
 <hr/>
 
@@ -378,11 +378,11 @@
 
 ### Methods
 
-| Name            | Privacy | Description                                                                             | Parameters                             | Return | Inherited From |
-| --------------- | ------- | --------------------------------------------------------------------------------------- | -------------------------------------- | ------ | -------------- |
-| `applyTemplate` |         | applies template content and renders slots                                              | `templateElement: HTMLTemplateElement` |        |                |
-| `fetch`         |         | override to load and process URL before returning a HTML string with data within slots. | `url: string`                          |        |                |
-| `slotsInit`     |         | reads payload and template from body or by attributes, apply template and renders slots |                                        |        |                |
+| Name            | Privacy | Description                                                                                                           | Parameters                             | Return | Inherited From |
+| --------------- | ------- | --------------------------------------------------------------------------------------------------------------------- | -------------------------------------- | ------ | -------------- |
+| `applyTemplate` |         | applies template content and renders slots, called from \`slotsInit()\`                                               | `templateElement: HTMLTemplateElement` |        |                |
+| `fetch`         |         | override to load and process URL before returning a HTML string with data within slots.                               | `url: string`                          |        |                |
+| `slotsInit`     |         | reads payload and template from body or by attributes, apply template and renders slots&#xA;, called from constructor |                                        |        |                |
 
 <hr/>
 

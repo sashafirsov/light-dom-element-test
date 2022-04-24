@@ -254,7 +254,7 @@
                   "name": "t"
                 }
               ],
-              "description": "applies template content and renders slots",
+              "description": "applies template content and renders slots, called from `slotsInit()`",
               "inheritedFrom": {
                 "name": "ShadowDomElement",
                 "module": "dist/src/shadow-dom-element.d.ts"
@@ -307,7 +307,7 @@
                   "text": ""
                 }
               },
-              "description": "reads payload and template from body or by attributes, apply template and renders slots",
+              "description": "reads payload and template from body or by attributes, apply template and renders slots\n, called from constructor",
               "inheritedFrom": {
                 "name": "ShadowDomElement",
                 "module": "dist/src/shadow-dom-element.d.ts"
@@ -416,7 +416,7 @@
       "declarations": [
         {
           "kind": "class",
-          "description": "",
+          "description": "Web Component to populate html slots into template using Shadow DOM.\nSlots content and template could be local in the page or pointed via URL.",
           "name": "ShadowDomElement",
           "members": [
             {
@@ -443,7 +443,7 @@
                   }
                 }
               ],
-              "description": "applies template content and renders slots"
+              "description": "applies template content and renders slots, called from `slotsInit()`"
             },
             {
               "kind": "method",
@@ -472,7 +472,7 @@
                   "text": ""
                 }
               },
-              "description": "reads payload and template from body or by attributes, apply template and renders slots"
+              "description": "reads payload and template from body or by attributes, apply template and renders slots\n, called from constructor"
             }
           ],
           "superclass": {
@@ -747,7 +747,7 @@
                   "name": "t"
                 }
               ],
-              "description": "applies template content and renders slots",
+              "description": "applies template content and renders slots, called from `slotsInit()`",
               "inheritedFrom": {
                 "name": "ShadowDomElement",
                 "module": "dist/src/shadow-dom-element.d.ts"
@@ -800,7 +800,7 @@
                   "text": ""
                 }
               },
-              "description": "reads payload and template from body or by attributes, apply template and renders slots",
+              "description": "reads payload and template from body or by attributes, apply template and renders slots\n, called from constructor",
               "inheritedFrom": {
                 "name": "ShadowDomElement",
                 "module": "dist/src/shadow-dom-element.d.ts"
@@ -941,7 +941,7 @@
       "declarations": [
         {
           "kind": "class",
-          "description": "",
+          "description": "Web Component to populate html slots into template using Shadow DOM.\nSlots content and template could be local in the page or pointed via URL.",
           "name": "ShadowDomElement",
           "members": [
             {
@@ -968,7 +968,7 @@
                   }
                 }
               ],
-              "description": "applies template content and renders slots"
+              "description": "applies template content and renders slots, called from `slotsInit()`"
             },
             {
               "kind": "method",
@@ -997,7 +997,7 @@
                   "text": ""
                 }
               },
-              "description": "reads payload and template from body or by attributes, apply template and renders slots"
+              "description": "reads payload and template from body or by attributes, apply template and renders slots\n, called from constructor"
             }
           ],
           "superclass": {

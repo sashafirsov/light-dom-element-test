@@ -1,5 +1,5 @@
 /// <reference lib="dom" />
-import ShadowDomElement from 'shadow-dom-element/shadow-dom-element';
+import ShadowDomElement from "shadow-dom-element/shadow-dom-element";
 
 /**
  * Web Component to populate html slots into template using Light DOM.
@@ -31,7 +31,7 @@ export default class LightDomElement extends ShadowDomElement {
      * @param url: string
      * @returns Promise<string>
      */
-    fetch(url: string): Promise<string>;
+    fetch( url:string ): Promise<string>;
 
     /**
      * reads payload and template from body or by attributes, apply template and renders slots

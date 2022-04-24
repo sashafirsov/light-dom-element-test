@@ -1,6 +1,5 @@
 import { TemplateResult } from 'lit';
 import '../src/light-dom-element-test.js';
-
 declare const _default: {
     title: string;
     component: string;
