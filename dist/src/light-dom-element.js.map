@@ -1,6 +1,6 @@
 {
   "version": 3,
-  "sources": ["../../node_modules/light-dom-element/light-dom-element.js"],
+  "sources": ["../../src/light-dom-element.js"],
   "sourcesContent": ["import { CssChain as $ } from \"css-chain\";\nimport ShadowDomElement from \"shadow-dom-element/shadow-dom-element.js\";\n\nexport default class LightDomElement extends ShadowDomElement\n{\n    applyTemplate( t ){ $( this ).template( t ); return this; }\n\n    attachShadow(){};\n}\n\nwindow.customElements.define('light-dom-element', LightDomElement);\n"],
   "mappings": "AAAA,qCACA,wDAEA,qBAAqB,SAAwB,EAC7C,CACI,cAAe,EAAG,CAAE,SAAG,IAAK,EAAE,SAAU,CAAE,EAAU,IAAM,CAE1D,cAAc,CAAC,CACnB,CAEA,OAAO,eAAe,OAAO,oBAAqB,CAAe",
   "names": []

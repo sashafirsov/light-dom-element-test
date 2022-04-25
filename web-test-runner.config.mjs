@@ -5,13 +5,11 @@ const filteredLogs = ['Running in dev mode', 'lit-html is in dev mode'];
 export default /** @type {import("@web/test-runner").TestRunnerConfig} */ ({
   /** Test files to run */
   files:[   'test/shadow-dom-element.test.js'
+        ,   'test/light-dom-element.test.js'
+        ,   'dist/test/shadow-dom-element-ts.test.js'
+        ,   'dist/test/light-dom-element-ts.test.js'
+        ,   'dist/test/**/*.test.js'
         ],
-  // files:[   'test/shadow-dom-element.test.js'
-  //       ,   'test/light-dom-element.test.js'
-  //       ,   'dist/test/shadow-dom-element-ts.test.js'
-  //       ,   'dist/test/light-dom-element-ts.test.js'
-  //       ],
-  // files: ['dist/test/**/*.test.js'],
 
   /** Resolve bare module imports */
   nodeResolve: {
