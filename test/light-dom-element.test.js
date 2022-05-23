@@ -43,7 +43,10 @@ describe('LightDomElement test', () => {
                 <button slot="">action</button>
             </light-dom-element>`
         );
-        expect($('button', el).txt()).to.equal('action');
+        expect($(el).slots().length).to.equal(1);
+        expect($(el).slots()[0].hidden).to.equal(true);
+        expect($('button[slot=""]', el).length).to.equal(1);
+        expect($('button[slot=""]', el).txt()).to.equal('action');
     });
     it('replaces slots', async () => {
         const el = await fixture(
@@ -57,11 +60,11 @@ describe('LightDomElement test', () => {
             </light-dom-element>`
         );
         // template slots are replaced
-        expect($('h5', el).txt()).to.equal('');
-        expect($('button', el).length).to.equal(0);
-        // by slots
-        expect($('a', el).txt()).to.equal('link');
-        expect($('h3', el).id).to.equal('heading');
+
+        expect($('[slot="slot1"]', el).tagName).to.equal('H3');
+        expect($('[slot="slot2"]', el).tagName).to.equal('A');
+        expect($('h5'    , el).parent('slot').hidden).to.equal(true);
+        expect($('button', el).parent('slot').hidden).to.equal(true);
     });
     it('srcset & for attributes', async () => {
         const container = await fixture(
@@ -84,11 +87,14 @@ describe('LightDomElement test', () => {
         await el.promise;
 
         // template slots are replaced
-        expect($('h5', el).txt()).to.equal('');
-        expect($('button', el).length).to.equal(0);
+        expect($('h5'    , el).parent('slot').hidden).to.equal(true);
+        expect($('button', el).parent('slot').hidden).to.equal(true);
         // by slots
-        expect($('a', el).txt()).to.equal('link');
-        expect($('h3', el).id).to.equal('heading');
+        expect($('slot[name="slot1"]', el).hidden).to.equal(true);
+        expect($('slot[name="slot2"]', el).hidden).to.equal(true);
+        expect($('[slot="slot1"]', el).id   ).to.equal('heading');
+        expect($('[slot="slot1"]', el).txt()).to.equal('heading 3');
+        expect($('[slot="slot2"]', el).txt()).to.equal('link');
     });
     it('src & code attributes', async () => {
         const el = await fixture(
@@ -97,11 +103,13 @@ describe('LightDomElement test', () => {
         await el.promise;
 
         // template slots are replaced
-        expect($('h5', el).txt()).to.equal('');
-        expect($('button', el).length).to.equal(0);
+        expect($('h5'    , el).parent('slot').hidden).to.equal(true);
+        expect($('button', el).parent('slot').hidden).to.equal(true);
         // by slots
-        expect($('a', el).txt()).to.equal('link 😃');
-        expect($('h3', el).id).to.equal('heading');
+        expect($('slot[name="slot1"]', el).hidden).to.equal(true);
+        expect($('slot[name="slot2"]', el).hidden).to.equal(true);
+        expect($('[slot="slot1"]', el).id   ).to.equal('heading');
+        expect($('[slot="slot1"]', el).txt()).to.equal('heading 3 😌');
+        expect($('[slot="slot2"]', el).txt()).to.equal('link 😃');
     });
-
 });

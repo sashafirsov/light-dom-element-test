@@ -43,7 +43,7 @@ describe('ShadowDomElement test', () => {
                 <button slot="">action</button>
             </shadow-dom-element>`
         );
-        expect($('button', el).txt()).to.equal('action');
+        expect($(el).slots('').txt().trim()).to.equal('action');
     });
     it('replaces slots', async () => {
         const el = await fixture(
@@ -56,12 +56,8 @@ describe('ShadowDomElement test', () => {
                 <h3 slot="slot1" id="heading">heading 3</h3>
             </shadow-dom-element>`
         );
-        // template slots are replaced
-        expect($('h5', el).txt()).to.equal('');
-        expect($('button', el).length).to.equal(0);
-        // by slots
-        expect($('a', el).txt()).to.equal('link');
-        expect($('h3', el).id).to.equal('heading');
+        expect($(el).slots('slot1').txt()).to.equal('heading 3');
+        expect($(el).slots('slot2').txt()).to.equal('link');
     });
     it('srcset & for attributes', async () => {
         const container = await fixture(
@@ -84,11 +80,8 @@ describe('ShadowDomElement test', () => {
         await el.promise;
 
         // template slots are replaced
-        expect($('h5', el).txt()).to.equal('');
-        expect($('button', el).length).to.equal(0);
-        // by slots
-        expect($('a', el).txt()).to.equal('link');
-        expect($('h3', el).id).to.equal('heading');
+        expect($(el).slots('slot1').txt()).to.equal('heading 3');
+        expect($(el).slots('slot2').txt()).to.equal('link');
     });
     it('src & code attributes', async () => {
         const el = await fixture(
@@ -97,11 +90,34 @@ describe('ShadowDomElement test', () => {
         await el.promise;
 
         // template slots are replaced
-        expect($('h5', el).txt()).to.equal('');
-        expect($('button', el).length).to.equal(0);
-        // by slots
-        expect($('a', el).txt()).to.equal('link 😃');
-        expect($('h3', el).id).to.equal('heading');
+        expect($(el).slots('slot1').txt()).to.equal('heading 3 😌');
+        expect($(el).slots('slot2').txt()).to.equal('link 😃');
+    });
+    it('slot attribute', async () => {
+        const el = await fixture(
+            html`<shadow-dom-element>
+                <template>
+                    <a href="coverage.svg"><slot name="abc" attribute="href"/></a>
+                </template>
+                <link slot="abc" href="link-href"/>
+            </shadow-dom-element>`
+        );
+        expect($('a', el).attr('href')).to.equal('link-href');
+    });
+    it('slot for & attribute', async () => {
+        const el = await fixture(
+            html`<shadow-dom-element>
+                <template>
+                    <img id="image-1"/>
+                    <slot name="image-link" for="image-1"  attribute="src"/></a>
+                    <slot name="image-alt"  for="image-1"  attribute="alt"/></a>
+                </template>
+                <link   slot="image-link" href="link-href" />
+                <i      slot="image-alt"  >alt text</i>
+            </shadow-dom-element>`
+        );
+        expect($('img', el).attr('src')).to.equal('link-href');
+        expect($('img', el).attr('alt')).to.equal('alt text');
     });
 
 });
