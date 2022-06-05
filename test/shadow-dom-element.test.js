@@ -109,8 +109,8 @@ describe('ShadowDomElement test', () => {
             html`<shadow-dom-element>
                 <template>
                     <img id="image-1"/>
-                    <slot name="image-link" for="image-1"  attribute="src"/></a>
-                    <slot name="image-alt"  for="image-1"  attribute="alt"/></a>
+                    <slot name="image-link" for="image-1"  attribute="src"/></slot>
+                    <slot name="image-alt"  for="image-1"  attribute="alt"/></slot>
                 </template>
                 <link   slot="image-link" href="link-href" />
                 <i      slot="image-alt"  >alt text</i>

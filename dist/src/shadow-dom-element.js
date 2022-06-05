@@ -1,2 +1,46 @@
-export default class c extends HTMLElement{promise;constructor(){super(),this.promise=this.slotsInit()}async fetch(e){return(await fetch(e)).text()}applyTemplate(e){return this.shadowRoot.appendChild(e.content.cloneNode(!0)),this}async slotsInit(){const e=async t=>this.fetch(t),a=async(t,s)=>{await(async n=>n?s(n):0)(this.getAttribute(t))},i=[...this.getElementsByTagName("template")];await a("srcset",t=>this.innerHTML=`${document.getElementById(t)?.innerHTML}`),await a("src",async t=>this.innerHTML=await e(t)),this.attachShadow({mode:"open"});const o=t=>this.applyTemplate(t);return i.forEach(o),await a("for",t=>o(document.getElementById(t))),await a("code",async t=>{const s=document.createElement("div");s.innerHTML=await e(t);const n=document.createElement("template");s.childNodes.forEach(d=>n.content.append(d)),o(n)}),this}}window.customElements.define("shadow-dom-element",c);
-//# sourceMappingURL=shadow-dom-element.js.map
+// src/shadow-dom-element.js
+var attr = (el, name) => el.getAttribute(name);
+var ShadowDomElement = class extends HTMLElement {
+  promise;
+  constructor() {
+    super();
+    this.promise = this.slotsInit();
+  }
+  async fetch(url) {
+    return (await fetch(url)).text();
+  }
+  applyTemplate(t) {
+    const s = this.shadowRoot;
+    s.appendChild(t.content.cloneNode(true));
+    s.querySelectorAll("slot[attribute]").forEach((a) => {
+      let f = attr(a, "for"), s2 = f ? a.getRootNode().querySelector("#" + f) : a.parentElement;
+      s2.setAttribute(attr(a, "attribute"), a.assignedElements().map((l) => attr(l, "href") || attr(l, "src") || l.innerText).join(""));
+    });
+    return this;
+  }
+  async slotsInit() {
+    const getText = async (url) => this.fetch(url);
+    const onAttr = async (att, cb) => {
+      await (async (a) => a ? cb(a) : 0)(attr(this, att));
+    };
+    const embeddedTemplates = [...this.getElementsByTagName("template")];
+    await onAttr("srcset", (id) => this.innerHTML = `${document.getElementById(id)?.innerHTML}`);
+    await onAttr("src", async (url) => this.innerHTML = await getText(url));
+    this.attachShadow({ mode: "open" });
+    const applyTemplate = (t) => this.applyTemplate(t);
+    embeddedTemplates.forEach(applyTemplate);
+    await onAttr("for", (id) => applyTemplate(document.getElementById(id)));
+    await onAttr("code", async (url) => {
+      const d = document.createElement("div");
+      d.innerHTML = await getText(url);
+      const t = document.createElement("template");
+      d.childNodes.forEach((n) => t.content.append(n));
+      applyTemplate(t);
+    });
+    return this;
+  }
+};
+window.customElements.define("shadow-dom-element", ShadowDomElement);
+export {
+  ShadowDomElement as default
+};

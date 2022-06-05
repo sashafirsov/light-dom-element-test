@@ -1,26 +1,3 @@
-# `stories/index.stories.ts`:
-
-## Variables
-
-| Name             | Description | Type |
-| ---------------- | ----------- | ---- |
-| `Regular`        |             |      |
-| `CustomTitle`    |             |      |
-| `CustomCounter`  |             |      |
-| `SlottedContent` |             |      |
-
-<hr/>
-
-## Exports
-
-| Kind | Name             | Declaration    | Module                   | Package |
-| ---- | ---------------- | -------------- | ------------------------ | ------- |
-| `js` | `default`        |                | stories/index.stories.ts |         |
-| `js` | `Regular`        | Regular        | stories/index.stories.ts |         |
-| `js` | `CustomTitle`    | CustomTitle    | stories/index.stories.ts |         |
-| `js` | `CustomCounter`  | CustomCounter  | stories/index.stories.ts |         |
-| `js` | `SlottedContent` | SlottedContent | stories/index.stories.ts |         |
-
 # `src/index.ts`:
 
 ## Exports
@@ -37,63 +14,30 @@
 | --------------------------- | ------------------------ | ------------------- | --------------------------- | ------- |
 | `custom-element-definition` | `light-dom-element-test` | LightDomElementTest | /src/LightDomElementTest.js |         |
 
-# `src/light-dom-element.d.ts`:
-
-## class: `LightDomElement`, `light-dom-element`
-
-### Superclass
-
-| Name               | Module | Package                               |
-| ------------------ | ------ | ------------------------------------- |
-| `ShadowDomElement` |        | shadow-dom-element/shadow-dom-element |
-
-### Fields
-
-| Name      | Privacy | Type                        | Default | Description                                          | Inherited From   |
-| --------- | ------- | --------------------------- | ------- | ---------------------------------------------------- | ---------------- |
-| `promise` |         | `Promise<ShadowDomElement>` |         | resolved when template and slots payload is rendered | ShadowDomElement |
-
-### Methods
-
-| Name            | Privacy | Description                                                                                                                | Parameters                             | Return                     | Inherited From   |
-| --------------- | ------- | -------------------------------------------------------------------------------------------------------------------------- | -------------------------------------- | -------------------------- | ---------------- |
-| `attachShadow`  |         | Overrides HTMLElement {attachShadow} method to prevent shadow creation.&#xA;called from constructor before \`slotsInit()\` | `init: ShadowRootInit`                 |                            |                  |
-| `applyTemplate` |         | applies template content and renders slots, called from \`slotsInit()\`                                                    | `templateElement: HTMLTemplateElement` |                            | ShadowDomElement |
-| `fetch`         |         | override to load and process URL before returning a HTML string with data within slots.                                    | `url: string`                          |                            | ShadowDomElement |
-| `slotsInit`     |         | reads payload and template from body or by attributes, apply template and renders slots&#xA;, called from constructor      |                                        | `Promise<LightDomElement>` | ShadowDomElement |
-
-<hr/>
-
-## Exports
-
-| Kind | Name      | Declaration     | Module                     | Package |
-| ---- | --------- | --------------- | -------------------------- | ------- |
-| `js` | `default` | LightDomElement | src/light-dom-element.d.ts |         |
-
 # `src/light-dom-element.js`:
 
 ## class: `LightDomElement`, `light-dom-element`
 
 ### Superclass
 
-| Name               | Module | Package                                  |
-| ------------------ | ------ | ---------------------------------------- |
-| `ShadowDomElement` |        | shadow-dom-element/shadow-dom-element.js |
+| Name               | Module | Package            |
+| ------------------ | ------ | ------------------ |
+| `ShadowDomElement` |        | shadow-dom-element |
 
 ### Fields
 
-| Name      | Privacy | Type                        | Default | Description                                          | Inherited From   |
-| --------- | ------- | --------------------------- | ------- | ---------------------------------------------------- | ---------------- |
-| `promise` |         | `Promise<ShadowDomElement>` |         | resolved when template and slots payload is rendered | ShadowDomElement |
+| Name      | Privacy | Type | Default | Description | Inherited From   |
+| --------- | ------- | ---- | ------- | ----------- | ---------------- |
+| `promise` |         |      |         |             | ShadowDomElement |
 
 ### Methods
 
-| Name            | Privacy | Description                                                                                                           | Parameters    | Return | Inherited From   |
-| --------------- | ------- | --------------------------------------------------------------------------------------------------------------------- | ------------- | ------ | ---------------- |
-| `applyTemplate` |         | applies template content and renders slots, called from \`slotsInit()\`                                               | `t`           |        | ShadowDomElement |
-| `attachShadow`  |         |                                                                                                                       |               |        |                  |
-| `fetch`         |         | override to load and process URL before returning a HTML string with data within slots.                               | `url: string` |        | ShadowDomElement |
-| `slotsInit`     |         | reads payload and template from body or by attributes, apply template and renders slots&#xA;, called from constructor |               |        | ShadowDomElement |
+| Name            | Privacy | Description | Parameters | Return | Inherited From   |
+| --------------- | ------- | ----------- | ---------- | ------ | ---------------- |
+| `applyTemplate` |         |             | `t`        |        | ShadowDomElement |
+| `attachShadow`  |         |             |            |        |                  |
+| `fetch`         |         |             | `url`      |        | ShadowDomElement |
+| `slotsInit`     |         |             |            |        | ShadowDomElement |
 
 <hr/>
 
@@ -142,38 +86,6 @@
 | ---- | --------------------- | ------------------- | -------------------------- | ------- |
 | `js` | `LightDomElementTest` | LightDomElementTest | src/LightDomElementTest.ts |         |
 
-# `src/shadow-dom-element.d.ts`:
-
-## class: `ShadowDomElement`, `shadow-dom-element`
-
-### Superclass
-
-| Name          | Module | Package |
-| ------------- | ------ | ------- |
-| `HTMLElement` |        |         |
-
-### Fields
-
-| Name      | Privacy | Type                        | Default | Description                                          | Inherited From |
-| --------- | ------- | --------------------------- | ------- | ---------------------------------------------------- | -------------- |
-| `promise` |         | `Promise<ShadowDomElement>` |         | resolved when template and slots payload is rendered |                |
-
-### Methods
-
-| Name            | Privacy | Description                                                                                                           | Parameters                             | Return | Inherited From |
-| --------------- | ------- | --------------------------------------------------------------------------------------------------------------------- | -------------------------------------- | ------ | -------------- |
-| `applyTemplate` |         | applies template content and renders slots, called from \`slotsInit()\`                                               | `templateElement: HTMLTemplateElement` |        |                |
-| `fetch`         |         | override to load and process URL before returning a HTML string with data within slots.                               | `url: string`                          |        |                |
-| `slotsInit`     |         | reads payload and template from body or by attributes, apply template and renders slots&#xA;, called from constructor |                                        |        |                |
-
-<hr/>
-
-## Exports
-
-| Kind | Name      | Declaration      | Module                      | Package |
-| ---- | --------- | ---------------- | --------------------------- | ------- |
-| `js` | `default` | ShadowDomElement | src/shadow-dom-element.d.ts |         |
-
 # `src/shadow-dom-element.js`:
 
 ## class: `ShadowDomElement`, `shadow-dom-element`
@@ -207,13 +119,28 @@
 | `js`                        | `default`            | ShadowDomElement | src/shadow-dom-element.js |         |
 | `custom-element-definition` | `shadow-dom-element` | ShadowDomElement | src/shadow-dom-element.js |         |
 
-# `dist/src/index.d.ts`:
+# `stories/index.stories.ts`:
+
+## Variables
+
+| Name             | Description | Type |
+| ---------------- | ----------- | ---- |
+| `Regular`        |             |      |
+| `CustomTitle`    |             |      |
+| `CustomCounter`  |             |      |
+| `SlottedContent` |             |      |
+
+<hr/>
 
 ## Exports
 
-| Kind | Name                  | Declaration         | Module                   | Package |
-| ---- | --------------------- | ------------------- | ------------------------ | ------- |
-| `js` | `LightDomElementTest` | LightDomElementTest | ./LightDomElementTest.js |         |
+| Kind | Name             | Declaration    | Module                   | Package |
+| ---- | ---------------- | -------------- | ------------------------ | ------- |
+| `js` | `default`        |                | stories/index.stories.ts |         |
+| `js` | `Regular`        | Regular        | stories/index.stories.ts |         |
+| `js` | `CustomTitle`    | CustomTitle    | stories/index.stories.ts |         |
+| `js` | `CustomCounter`  | CustomCounter  | stories/index.stories.ts |         |
+| `js` | `SlottedContent` | SlottedContent | stories/index.stories.ts |         |
 
 # `dist/src/index.js`:
 
@@ -231,103 +158,24 @@
 | --------------------------- | ------------------------ | ------------------- | -------------------------------- | ------- |
 | `custom-element-definition` | `light-dom-element-test` | LightDomElementTest | /dist/src/LightDomElementTest.js |         |
 
-# `dist/src/light-dom-element.d.ts`:
-
-## class: `LightDomElement`, `light-dom-element`
-
-### Superclass
-
-| Name               | Module | Package                               |
-| ------------------ | ------ | ------------------------------------- |
-| `ShadowDomElement` |        | shadow-dom-element/shadow-dom-element |
-
-### Fields
-
-| Name      | Privacy | Type                        | Default | Description                                          | Inherited From   |
-| --------- | ------- | --------------------------- | ------- | ---------------------------------------------------- | ---------------- |
-| `promise` |         | `Promise<ShadowDomElement>` |         | resolved when template and slots payload is rendered | ShadowDomElement |
-
-### Methods
-
-| Name            | Privacy | Description                                                                                                                | Parameters                             | Return                     | Inherited From   |
-| --------------- | ------- | -------------------------------------------------------------------------------------------------------------------------- | -------------------------------------- | -------------------------- | ---------------- |
-| `attachShadow`  |         | Overrides HTMLElement {attachShadow} method to prevent shadow creation.&#xA;called from constructor before \`slotsInit()\` | `init: ShadowRootInit`                 |                            |                  |
-| `applyTemplate` |         | applies template content and renders slots, called from \`slotsInit()\`                                                    | `templateElement: HTMLTemplateElement` |                            | ShadowDomElement |
-| `fetch`         |         | override to load and process URL before returning a HTML string with data within slots.                                    | `url: string`                          |                            | ShadowDomElement |
-| `slotsInit`     |         | reads payload and template from body or by attributes, apply template and renders slots&#xA;, called from constructor      |                                        | `Promise<LightDomElement>` | ShadowDomElement |
-
-<hr/>
-
-## Exports
-
-| Kind | Name      | Declaration     | Module                          | Package |
-| ---- | --------- | --------------- | ------------------------------- | ------- |
-| `js` | `default` | LightDomElement | dist/src/light-dom-element.d.ts |         |
-
 # `dist/src/light-dom-element.js`:
 
-## class: `LightDomElement`, `light-dom-element`
+## Variables
 
-### Superclass
-
-| Name               | Module | Package                                  |
-| ------------------ | ------ | ---------------------------------------- |
-| `ShadowDomElement` |        | shadow-dom-element/shadow-dom-element.js |
-
-### Fields
-
-| Name      | Privacy | Type                        | Default | Description                                          | Inherited From   |
-| --------- | ------- | --------------------------- | ------- | ---------------------------------------------------- | ---------------- |
-| `promise` |         | `Promise<ShadowDomElement>` |         | resolved when template and slots payload is rendered | ShadowDomElement |
-
-### Methods
-
-| Name            | Privacy | Description                                                                                                           | Parameters    | Return | Inherited From   |
-| --------------- | ------- | --------------------------------------------------------------------------------------------------------------------- | ------------- | ------ | ---------------- |
-| `applyTemplate` |         | applies template content and renders slots, called from \`slotsInit()\`                                               | `t`           |        | ShadowDomElement |
-| `attachShadow`  |         |                                                                                                                       |               |        |                  |
-| `fetch`         |         | override to load and process URL before returning a HTML string with data within slots.                               | `url: string` |        | ShadowDomElement |
-| `slotsInit`     |         | reads payload and template from body or by attributes, apply template and renders slots&#xA;, called from constructor |               |        | ShadowDomElement |
+| Name               | Description | Type |
+| ------------------ | ----------- | ---- |
+| `ShadowDomElement` |             |      |
+| `LightDomElement`  |             |      |
 
 <hr/>
 
 ## Exports
 
-| Kind                        | Name                | Declaration     | Module                        | Package |
-| --------------------------- | ------------------- | --------------- | ----------------------------- | ------- |
-| `js`                        | `default`           | LightDomElement | dist/src/light-dom-element.js |         |
-| `custom-element-definition` | `light-dom-element` | LightDomElement | dist/src/light-dom-element.js |         |
-
-# `dist/src/LightDomElementTest.d.ts`:
-
-## class: `LightDomElementTest`, `light-dom-element-test`
-
-### Superclass
-
-| Name         | Module | Package |
-| ------------ | ------ | ------- |
-| `LitElement` |        | lit     |
-
-### Fields
-
-| Name      | Privacy | Type     | Default | Description | Inherited From |
-| --------- | ------- | -------- | ------- | ----------- | -------------- |
-| `title`   |         | `string` |         |             |                |
-| `counter` |         | `number` |         |             |                |
-
-### Methods
-
-| Name          | Privacy | Description | Parameters | Return | Inherited From |
-| ------------- | ------- | ----------- | ---------- | ------ | -------------- |
-| `__increment` |         |             |            | `void` |                |
-
-<hr/>
-
-## Exports
-
-| Kind | Name                  | Declaration         | Module                            | Package |
-| ---- | --------------------- | ------------------- | --------------------------------- | ------- |
-| `js` | `LightDomElementTest` | LightDomElementTest | dist/src/LightDomElementTest.d.ts |         |
+| Kind                        | Name                 | Declaration      | Module                        | Package |
+| --------------------------- | -------------------- | ---------------- | ----------------------------- | ------- |
+| `custom-element-definition` | `shadow-dom-element` | ShadowDomElement | dist/src/light-dom-element.js |         |
+| `custom-element-definition` | `light-dom-element`  | LightDomElement  | dist/src/light-dom-element.js |         |
+| `js`                        | `default`            | LightDomElement  | dist/src/light-dom-element.js |         |
 
 # `dist/src/LightDomElementTest.js`:
 
@@ -360,108 +208,22 @@
 | ---- | --------------------- | ------------------- | ------------------------------- | ------- |
 | `js` | `LightDomElementTest` | LightDomElementTest | dist/src/LightDomElementTest.js |         |
 
-# `dist/src/shadow-dom-element.d.ts`:
-
-## class: `ShadowDomElement`, `shadow-dom-element`
-
-### Superclass
-
-| Name          | Module | Package |
-| ------------- | ------ | ------- |
-| `HTMLElement` |        |         |
-
-### Fields
-
-| Name      | Privacy | Type                        | Default | Description                                          | Inherited From |
-| --------- | ------- | --------------------------- | ------- | ---------------------------------------------------- | -------------- |
-| `promise` |         | `Promise<ShadowDomElement>` |         | resolved when template and slots payload is rendered |                |
-
-### Methods
-
-| Name            | Privacy | Description                                                                                                           | Parameters                             | Return | Inherited From |
-| --------------- | ------- | --------------------------------------------------------------------------------------------------------------------- | -------------------------------------- | ------ | -------------- |
-| `applyTemplate` |         | applies template content and renders slots, called from \`slotsInit()\`                                               | `templateElement: HTMLTemplateElement` |        |                |
-| `fetch`         |         | override to load and process URL before returning a HTML string with data within slots.                               | `url: string`                          |        |                |
-| `slotsInit`     |         | reads payload and template from body or by attributes, apply template and renders slots&#xA;, called from constructor |                                        |        |                |
-
-<hr/>
-
-## Exports
-
-| Kind | Name      | Declaration      | Module                           | Package |
-| ---- | --------- | ---------------- | -------------------------------- | ------- |
-| `js` | `default` | ShadowDomElement | dist/src/shadow-dom-element.d.ts |         |
-
 # `dist/src/shadow-dom-element.js`:
-
-## class: `c`, `shadow-dom-element`
-
-### Superclass
-
-| Name          | Module | Package |
-| ------------- | ------ | ------- |
-| `HTMLElement` |        |         |
-
-### Fields
-
-| Name      | Privacy | Type | Default | Description | Inherited From |
-| --------- | ------- | ---- | ------- | ----------- | -------------- |
-| `promise` |         |      |         |             |                |
-
-### Methods
-
-| Name            | Privacy | Description | Parameters | Return | Inherited From |
-| --------------- | ------- | ----------- | ---------- | ------ | -------------- |
-| `fetch`         |         |             | `e`        |        |                |
-| `applyTemplate` |         |             | `e`        |        |                |
-| `slotsInit`     |         |             |            |        |                |
-
-<hr/>
-
-## Exports
-
-| Kind                        | Name                 | Declaration | Module                         | Package |
-| --------------------------- | -------------------- | ----------- | ------------------------------ | ------- |
-| `js`                        | `default`            | c           | dist/src/shadow-dom-element.js |         |
-| `custom-element-definition` | `shadow-dom-element` | c           | dist/src/shadow-dom-element.js |         |
-
-# `dist/stories/index.stories.d.ts`:
 
 ## Variables
 
-| Name             | Description | Type                                                                                                                                                                                                                                                                  |
-| ---------------- | ----------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `_default`       |             | `{
-    title: string;
-    component: string;
-    argTypes: {
-        title: {
-            control: string;
-        };
-        counter: {
-            control: string;
-        };
-        textColor: {
-            control: string;
-        };
-    };
-}` |
-| `Regular`        |             | `Story<ArgTypes>`                                                                                                                                                                                                                                                     |
-| `CustomTitle`    |             | `Story<ArgTypes>`                                                                                                                                                                                                                                                     |
-| `CustomCounter`  |             | `Story<ArgTypes>`                                                                                                                                                                                                                                                     |
-| `SlottedContent` |             | `Story<ArgTypes>`                                                                                                                                                                                                                                                     |
+| Name               | Description | Type |
+| ------------------ | ----------- | ---- |
+| `ShadowDomElement` |             |      |
 
 <hr/>
 
 ## Exports
 
-| Kind | Name             | Declaration    | Module                          | Package |
-| ---- | ---------------- | -------------- | ------------------------------- | ------- |
-| `js` | `default`        | \_default      | dist/stories/index.stories.d.ts |         |
-| `js` | `Regular`        | Regular        | dist/stories/index.stories.d.ts |         |
-| `js` | `CustomTitle`    | CustomTitle    | dist/stories/index.stories.d.ts |         |
-| `js` | `CustomCounter`  | CustomCounter  | dist/stories/index.stories.d.ts |         |
-| `js` | `SlottedContent` | SlottedContent | dist/stories/index.stories.d.ts |         |
+| Kind                        | Name                 | Declaration      | Module                         | Package |
+| --------------------------- | -------------------- | ---------------- | ------------------------------ | ------- |
+| `custom-element-definition` | `shadow-dom-element` | ShadowDomElement | dist/src/shadow-dom-element.js |         |
+| `js`                        | `default`            | ShadowDomElement | dist/src/shadow-dom-element.js |         |
 
 # `dist/stories/index.stories.js`:
 

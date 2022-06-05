@@ -1,3 +1,4 @@
+rm -rf dist
 ./node_modules/.bin/tsc
 cp src/*.d.ts dist/src
 esbuild src/light-dom-element.js --outfile=dist/src/light-dom-element.js --minify --sourcemap --target=chrome100

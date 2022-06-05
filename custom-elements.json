@@ -4,87 +4,6 @@
   "modules": [
     {
       "kind": "javascript-module",
-      "path": "stories/index.stories.ts",
-      "declarations": [
-        {
-          "kind": "variable",
-          "name": "Regular"
-        },
-        {
-          "kind": "variable",
-          "name": "CustomTitle"
-        },
-        {
-          "kind": "variable",
-          "name": "CustomCounter"
-        },
-        {
-          "kind": "variable",
-          "name": "SlottedContent"
-        }
-      ],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "default",
-          "declaration": {
-            "module": "stories/index.stories.ts"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "Regular",
-          "declaration": {
-            "name": "Regular",
-            "module": "stories/index.stories.ts"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "CustomTitle",
-          "declaration": {
-            "name": "CustomTitle",
-            "module": "stories/index.stories.ts"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "CustomCounter",
-          "declaration": {
-            "name": "CustomCounter",
-            "module": "stories/index.stories.ts"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "SlottedContent",
-          "declaration": {
-            "name": "SlottedContent",
-            "module": "stories/index.stories.ts"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
-      "path": "coverage/lcov-report/block-navigation.js",
-      "declarations": [],
-      "exports": []
-    },
-    {
-      "kind": "javascript-module",
-      "path": "coverage/lcov-report/prettify.js",
-      "declarations": [],
-      "exports": []
-    },
-    {
-      "kind": "javascript-module",
-      "path": "coverage/lcov-report/sorter.js",
-      "declarations": [],
-      "exports": []
-    },
-    {
-      "kind": "javascript-module",
       "path": "src/index.ts",
       "declarations": [],
       "exports": [
@@ -115,125 +34,6 @@
     },
     {
       "kind": "javascript-module",
-      "path": "src/light-dom-element.d.ts",
-      "declarations": [
-        {
-          "kind": "class",
-          "description": "Web Component to populate html slots into template using Light DOM.\nSlots content and template could be local in the page or pointed via URL.",
-          "name": "LightDomElement",
-          "members": [
-            {
-              "kind": "field",
-              "name": "promise",
-              "type": {
-                "text": "Promise<ShadowDomElement>"
-              },
-              "description": "resolved when template and slots payload is rendered",
-              "inheritedFrom": {
-                "name": "ShadowDomElement",
-                "module": "dist/src/shadow-dom-element.d.ts"
-              }
-            },
-            {
-              "kind": "method",
-              "name": "attachShadow",
-              "return": {
-                "type": {
-                  "text": ""
-                }
-              },
-              "parameters": [
-                {
-                  "name": "init",
-                  "type": {
-                    "text": "ShadowRootInit"
-                  },
-                  "description": "Information about ShadowRoot."
-                }
-              ],
-              "description": "Overrides HTMLElement {attachShadow} method to prevent shadow creation.\ncalled from constructor before `slotsInit()`"
-            },
-            {
-              "kind": "method",
-              "name": "applyTemplate",
-              "return": {
-                "type": {
-                  "text": ""
-                }
-              },
-              "parameters": [
-                {
-                  "name": "templateElement",
-                  "type": {
-                    "text": "HTMLTemplateElement"
-                  }
-                }
-              ],
-              "description": "applies template content and renders slots, called from `slotsInit()`",
-              "inheritedFrom": {
-                "name": "ShadowDomElement",
-                "module": "dist/src/shadow-dom-element.d.ts"
-              }
-            },
-            {
-              "kind": "method",
-              "name": "fetch",
-              "return": {
-                "type": {
-                  "text": ""
-                }
-              },
-              "parameters": [
-                {
-                  "name": "url",
-                  "type": {
-                    "text": "string"
-                  },
-                  "description": ": string"
-                }
-              ],
-              "description": "override to load and process URL before returning a HTML string with data within slots.",
-              "inheritedFrom": {
-                "name": "ShadowDomElement",
-                "module": "dist/src/shadow-dom-element.d.ts"
-              }
-            },
-            {
-              "kind": "method",
-              "name": "slotsInit",
-              "return": {
-                "type": {
-                  "text": "Promise<LightDomElement>"
-                }
-              },
-              "description": "reads payload and template from body or by attributes, apply template and renders slots\n, called from constructor",
-              "inheritedFrom": {
-                "name": "ShadowDomElement",
-                "module": "dist/src/shadow-dom-element.d.ts"
-              }
-            }
-          ],
-          "superclass": {
-            "name": "ShadowDomElement",
-            "package": "shadow-dom-element/shadow-dom-element"
-          },
-          "tagName": "light-dom-element",
-          "customElement": true
-        }
-      ],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "default",
-          "declaration": {
-            "name": "LightDomElement",
-            "module": "src/light-dom-element.d.ts"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
       "path": "src/light-dom-element.js",
       "declarations": [
         {
@@ -244,20 +44,14 @@
             {
               "kind": "method",
               "name": "applyTemplate",
-              "return": {
-                "type": {
-                  "text": ""
-                }
-              },
               "parameters": [
                 {
                   "name": "t"
                 }
               ],
-              "description": "applies template content and renders slots, called from `slotsInit()`",
               "inheritedFrom": {
                 "name": "ShadowDomElement",
-                "module": "dist/src/shadow-dom-element.d.ts"
+                "module": "src/shadow-dom-element.js"
               }
             },
             {
@@ -267,56 +61,36 @@
             {
               "kind": "field",
               "name": "promise",
-              "type": {
-                "text": "Promise<ShadowDomElement>"
-              },
-              "description": "resolved when template and slots payload is rendered",
               "inheritedFrom": {
                 "name": "ShadowDomElement",
-                "module": "dist/src/shadow-dom-element.d.ts"
+                "module": "src/shadow-dom-element.js"
               }
             },
             {
               "kind": "method",
               "name": "fetch",
-              "return": {
-                "type": {
-                  "text": ""
-                }
-              },
               "parameters": [
                 {
-                  "name": "url",
-                  "type": {
-                    "text": "string"
-                  },
-                  "description": ": string"
+                  "name": "url"
                 }
               ],
-              "description": "override to load and process URL before returning a HTML string with data within slots.",
               "inheritedFrom": {
                 "name": "ShadowDomElement",
-                "module": "dist/src/shadow-dom-element.d.ts"
+                "module": "src/shadow-dom-element.js"
               }
             },
             {
               "kind": "method",
               "name": "slotsInit",
-              "return": {
-                "type": {
-                  "text": ""
-                }
-              },
-              "description": "reads payload and template from body or by attributes, apply template and renders slots\n, called from constructor",
               "inheritedFrom": {
                 "name": "ShadowDomElement",
-                "module": "dist/src/shadow-dom-element.d.ts"
+                "module": "src/shadow-dom-element.js"
               }
             }
           ],
           "superclass": {
             "name": "ShadowDomElement",
-            "package": "shadow-dom-element/shadow-dom-element.js"
+            "package": "shadow-dom-element"
           },
           "tagName": "light-dom-element",
           "customElement": true
@@ -412,89 +186,6 @@
     },
     {
       "kind": "javascript-module",
-      "path": "src/shadow-dom-element.d.ts",
-      "declarations": [
-        {
-          "kind": "class",
-          "description": "Web Component to populate html slots into template using Shadow DOM.\nSlots content and template could be local in the page or pointed via URL.",
-          "name": "ShadowDomElement",
-          "members": [
-            {
-              "kind": "field",
-              "name": "promise",
-              "type": {
-                "text": "Promise<ShadowDomElement>"
-              },
-              "description": "resolved when template and slots payload is rendered"
-            },
-            {
-              "kind": "method",
-              "name": "applyTemplate",
-              "return": {
-                "type": {
-                  "text": ""
-                }
-              },
-              "parameters": [
-                {
-                  "name": "templateElement",
-                  "type": {
-                    "text": "HTMLTemplateElement"
-                  }
-                }
-              ],
-              "description": "applies template content and renders slots, called from `slotsInit()`"
-            },
-            {
-              "kind": "method",
-              "name": "fetch",
-              "return": {
-                "type": {
-                  "text": ""
-                }
-              },
-              "parameters": [
-                {
-                  "name": "url",
-                  "type": {
-                    "text": "string"
-                  },
-                  "description": ": string"
-                }
-              ],
-              "description": "override to load and process URL before returning a HTML string with data within slots."
-            },
-            {
-              "kind": "method",
-              "name": "slotsInit",
-              "return": {
-                "type": {
-                  "text": ""
-                }
-              },
-              "description": "reads payload and template from body or by attributes, apply template and renders slots\n, called from constructor"
-            }
-          ],
-          "superclass": {
-            "name": "HTMLElement"
-          },
-          "tagName": "shadow-dom-element",
-          "customElement": true
-        }
-      ],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "default",
-          "declaration": {
-            "name": "ShadowDomElement",
-            "module": "src/shadow-dom-element.d.ts"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
       "path": "src/shadow-dom-element.js",
       "declarations": [
         {
@@ -557,18 +248,84 @@
     },
     {
       "kind": "javascript-module",
-      "path": "dist/src/index.d.ts",
-      "declarations": [],
+      "path": "stories/index.stories.ts",
+      "declarations": [
+        {
+          "kind": "variable",
+          "name": "Regular"
+        },
+        {
+          "kind": "variable",
+          "name": "CustomTitle"
+        },
+        {
+          "kind": "variable",
+          "name": "CustomCounter"
+        },
+        {
+          "kind": "variable",
+          "name": "SlottedContent"
+        }
+      ],
       "exports": [
         {
           "kind": "js",
-          "name": "LightDomElementTest",
+          "name": "default",
           "declaration": {
-            "name": "LightDomElementTest",
-            "module": "./LightDomElementTest.js"
+            "module": "stories/index.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "Regular",
+          "declaration": {
+            "name": "Regular",
+            "module": "stories/index.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "CustomTitle",
+          "declaration": {
+            "name": "CustomTitle",
+            "module": "stories/index.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "CustomCounter",
+          "declaration": {
+            "name": "CustomCounter",
+            "module": "stories/index.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "SlottedContent",
+          "declaration": {
+            "name": "SlottedContent",
+            "module": "stories/index.stories.ts"
           }
         }
       ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "coverage/lcov-report/block-navigation.js",
+      "declarations": [],
+      "exports": []
+    },
+    {
+      "kind": "javascript-module",
+      "path": "coverage/lcov-report/prettify.js",
+      "declarations": [],
+      "exports": []
+    },
+    {
+      "kind": "javascript-module",
+      "path": "coverage/lcov-report/sorter.js",
+      "declarations": [],
+      "exports": []
     },
     {
       "kind": "javascript-module",
@@ -587,12 +344,6 @@
     },
     {
       "kind": "javascript-module",
-      "path": "dist/src/light-dom-element-test.d.ts",
-      "declarations": [],
-      "exports": []
-    },
-    {
-      "kind": "javascript-module",
       "path": "dist/src/light-dom-element-test.js",
       "declarations": [],
       "exports": [
@@ -608,219 +359,25 @@
     },
     {
       "kind": "javascript-module",
-      "path": "dist/src/light-dom-element.d.ts",
-      "declarations": [
-        {
-          "kind": "class",
-          "description": "Web Component to populate html slots into template using Light DOM.\nSlots content and template could be local in the page or pointed via URL.",
-          "name": "LightDomElement",
-          "members": [
-            {
-              "kind": "field",
-              "name": "promise",
-              "type": {
-                "text": "Promise<ShadowDomElement>"
-              },
-              "description": "resolved when template and slots payload is rendered",
-              "inheritedFrom": {
-                "name": "ShadowDomElement",
-                "module": "dist/src/shadow-dom-element.d.ts"
-              }
-            },
-            {
-              "kind": "method",
-              "name": "attachShadow",
-              "return": {
-                "type": {
-                  "text": ""
-                }
-              },
-              "parameters": [
-                {
-                  "name": "init",
-                  "type": {
-                    "text": "ShadowRootInit"
-                  },
-                  "description": "Information about ShadowRoot."
-                }
-              ],
-              "description": "Overrides HTMLElement {attachShadow} method to prevent shadow creation.\ncalled from constructor before `slotsInit()`"
-            },
-            {
-              "kind": "method",
-              "name": "applyTemplate",
-              "return": {
-                "type": {
-                  "text": ""
-                }
-              },
-              "parameters": [
-                {
-                  "name": "templateElement",
-                  "type": {
-                    "text": "HTMLTemplateElement"
-                  }
-                }
-              ],
-              "description": "applies template content and renders slots, called from `slotsInit()`",
-              "inheritedFrom": {
-                "name": "ShadowDomElement",
-                "module": "dist/src/shadow-dom-element.d.ts"
-              }
-            },
-            {
-              "kind": "method",
-              "name": "fetch",
-              "return": {
-                "type": {
-                  "text": ""
-                }
-              },
-              "parameters": [
-                {
-                  "name": "url",
-                  "type": {
-                    "text": "string"
-                  },
-                  "description": ": string"
-                }
-              ],
-              "description": "override to load and process URL before returning a HTML string with data within slots.",
-              "inheritedFrom": {
-                "name": "ShadowDomElement",
-                "module": "dist/src/shadow-dom-element.d.ts"
-              }
-            },
-            {
-              "kind": "method",
-              "name": "slotsInit",
-              "return": {
-                "type": {
-                  "text": "Promise<LightDomElement>"
-                }
-              },
-              "description": "reads payload and template from body or by attributes, apply template and renders slots\n, called from constructor",
-              "inheritedFrom": {
-                "name": "ShadowDomElement",
-                "module": "dist/src/shadow-dom-element.d.ts"
-              }
-            }
-          ],
-          "superclass": {
-            "name": "ShadowDomElement",
-            "package": "shadow-dom-element/shadow-dom-element"
-          },
-          "tagName": "light-dom-element",
-          "customElement": true
-        }
-      ],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "default",
-          "declaration": {
-            "name": "LightDomElement",
-            "module": "dist/src/light-dom-element.d.ts"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
       "path": "dist/src/light-dom-element.js",
       "declarations": [
         {
-          "kind": "class",
-          "description": "",
+          "kind": "variable",
+          "name": "ShadowDomElement",
+          "default": "class extends HTMLElement {\n  promise;\n  constructor() {\n    super();\n    this.promise = this.slotsInit();\n  }\n  async fetch(url) {\n    return (await fetch(url)).text();\n  }\n  applyTemplate(t) {\n    const s = this.shadowRoot;\n    s.appendChild(t.content.cloneNode(true));\n    s.querySelectorAll(\"slot[attribute]\").forEach((a) => {\n      let f = attr(a, \"for\"), s2 = f ? a.getRootNode().querySelector(\"#\" + f) : a.parentElement;\n      s2.setAttribute(attr(a, \"attribute\"), a.assignedElements().map((l) => attr(l, \"href\") || attr(l, \"src\") || l.innerText).join(\"\"));\n    });\n    return this;\n  }\n  async slotsInit() {\n    const getText = async (url) => this.fetch(url);\n    const onAttr = async (att, cb) => {\n      await (async (a) => a ? cb(a) : 0)(attr(this, att));\n    };\n    const embeddedTemplates = [...this.getElementsByTagName(\"template\")];\n    await onAttr(\"srcset\", (id) => this.innerHTML = `${document.getElementById(id)?.innerHTML}`);\n    await onAttr(\"src\", async (url) => this.innerHTML = await getText(url));\n    this.attachShadow({ mode: \"open\" });\n    const applyTemplate = (t) => this.applyTemplate(t);\n    embeddedTemplates.forEach(applyTemplate);\n    await onAttr(\"for\", (id) => applyTemplate(document.getElementById(id)));\n    await onAttr(\"code\", async (url) => {\n      const d = document.createElement(\"div\");\n      d.innerHTML = await getText(url);\n      const t = document.createElement(\"template\");\n      d.childNodes.forEach((n) => t.content.append(n));\n      applyTemplate(t);\n    });\n    return this;\n  }\n}"
+        },
+        {
+          "kind": "variable",
           "name": "LightDomElement",
-          "members": [
-            {
-              "kind": "method",
-              "name": "applyTemplate",
-              "return": {
-                "type": {
-                  "text": ""
-                }
-              },
-              "parameters": [
-                {
-                  "name": "t"
-                }
-              ],
-              "description": "applies template content and renders slots, called from `slotsInit()`",
-              "inheritedFrom": {
-                "name": "ShadowDomElement",
-                "module": "dist/src/shadow-dom-element.d.ts"
-              }
-            },
-            {
-              "kind": "method",
-              "name": "attachShadow"
-            },
-            {
-              "kind": "field",
-              "name": "promise",
-              "type": {
-                "text": "Promise<ShadowDomElement>"
-              },
-              "description": "resolved when template and slots payload is rendered",
-              "inheritedFrom": {
-                "name": "ShadowDomElement",
-                "module": "dist/src/shadow-dom-element.d.ts"
-              }
-            },
-            {
-              "kind": "method",
-              "name": "fetch",
-              "return": {
-                "type": {
-                  "text": ""
-                }
-              },
-              "parameters": [
-                {
-                  "name": "url",
-                  "type": {
-                    "text": "string"
-                  },
-                  "description": ": string"
-                }
-              ],
-              "description": "override to load and process URL before returning a HTML string with data within slots.",
-              "inheritedFrom": {
-                "name": "ShadowDomElement",
-                "module": "dist/src/shadow-dom-element.d.ts"
-              }
-            },
-            {
-              "kind": "method",
-              "name": "slotsInit",
-              "return": {
-                "type": {
-                  "text": ""
-                }
-              },
-              "description": "reads payload and template from body or by attributes, apply template and renders slots\n, called from constructor",
-              "inheritedFrom": {
-                "name": "ShadowDomElement",
-                "module": "dist/src/shadow-dom-element.d.ts"
-              }
-            }
-          ],
-          "superclass": {
-            "name": "ShadowDomElement",
-            "package": "shadow-dom-element/shadow-dom-element.js"
-          },
-          "tagName": "light-dom-element",
-          "customElement": true
+          "default": "class extends ShadowDomElement {\n  applyTemplate(t) {\n    CssChain(this).template(t);\n    const s = this;\n    s.querySelectorAll(\"slot[attribute]\").forEach((a) => {\n      let f = attr2(a, \"for\"), s2 = f ? a.getRootNode().querySelector(\"#\" + f) : a.parentElement;\n      s2.setAttribute(attr2(a, \"attribute\"), a.assignedElements().map((l) => attr2(l, \"href\") || attr2(l, \"src\") || l.innerText).join(\"\"));\n    });\n    return this;\n  }\n  attachShadow() {\n  }\n}"
         }
       ],
       "exports": [
         {
-          "kind": "js",
-          "name": "default",
+          "kind": "custom-element-definition",
+          "name": "shadow-dom-element",
           "declaration": {
-            "name": "LightDomElement",
+            "name": "ShadowDomElement",
             "module": "dist/src/light-dom-element.js"
           }
         },
@@ -831,57 +388,13 @@
             "name": "LightDomElement",
             "module": "dist/src/light-dom-element.js"
           }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
-      "path": "dist/src/LightDomElementTest.d.ts",
-      "declarations": [
-        {
-          "kind": "class",
-          "description": "",
-          "name": "LightDomElementTest",
-          "members": [
-            {
-              "kind": "field",
-              "name": "title",
-              "type": {
-                "text": "string"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "counter",
-              "type": {
-                "text": "number"
-              }
-            },
-            {
-              "kind": "method",
-              "name": "__increment",
-              "return": {
-                "type": {
-                  "text": "void"
-                }
-              }
-            }
-          ],
-          "superclass": {
-            "name": "LitElement",
-            "package": "lit"
-          },
-          "tagName": "light-dom-element-test",
-          "customElement": true
-        }
-      ],
-      "exports": [
+        },
         {
           "kind": "js",
-          "name": "LightDomElementTest",
+          "name": "default",
           "declaration": {
-            "name": "LightDomElementTest",
-            "module": "dist/src/LightDomElementTest.d.ts"
+            "name": "LightDomElement",
+            "module": "dist/src/light-dom-element.js"
           }
         }
       ]
@@ -937,228 +450,29 @@
     },
     {
       "kind": "javascript-module",
-      "path": "dist/src/shadow-dom-element.d.ts",
+      "path": "dist/src/shadow-dom-element.js",
       "declarations": [
         {
-          "kind": "class",
-          "description": "Web Component to populate html slots into template using Shadow DOM.\nSlots content and template could be local in the page or pointed via URL.",
+          "kind": "variable",
           "name": "ShadowDomElement",
-          "members": [
-            {
-              "kind": "field",
-              "name": "promise",
-              "type": {
-                "text": "Promise<ShadowDomElement>"
-              },
-              "description": "resolved when template and slots payload is rendered"
-            },
-            {
-              "kind": "method",
-              "name": "applyTemplate",
-              "return": {
-                "type": {
-                  "text": ""
-                }
-              },
-              "parameters": [
-                {
-                  "name": "templateElement",
-                  "type": {
-                    "text": "HTMLTemplateElement"
-                  }
-                }
-              ],
-              "description": "applies template content and renders slots, called from `slotsInit()`"
-            },
-            {
-              "kind": "method",
-              "name": "fetch",
-              "return": {
-                "type": {
-                  "text": ""
-                }
-              },
-              "parameters": [
-                {
-                  "name": "url",
-                  "type": {
-                    "text": "string"
-                  },
-                  "description": ": string"
-                }
-              ],
-              "description": "override to load and process URL before returning a HTML string with data within slots."
-            },
-            {
-              "kind": "method",
-              "name": "slotsInit",
-              "return": {
-                "type": {
-                  "text": ""
-                }
-              },
-              "description": "reads payload and template from body or by attributes, apply template and renders slots\n, called from constructor"
-            }
-          ],
-          "superclass": {
-            "name": "HTMLElement"
-          },
-          "tagName": "shadow-dom-element",
-          "customElement": true
+          "default": "class extends HTMLElement {\n  promise;\n  constructor() {\n    super();\n    this.promise = this.slotsInit();\n  }\n  async fetch(url) {\n    return (await fetch(url)).text();\n  }\n  applyTemplate(t) {\n    const s = this.shadowRoot;\n    s.appendChild(t.content.cloneNode(true));\n    s.querySelectorAll(\"slot[attribute]\").forEach((a) => {\n      let f = attr(a, \"for\"), s2 = f ? a.getRootNode().querySelector(\"#\" + f) : a.parentElement;\n      s2.setAttribute(attr(a, \"attribute\"), a.assignedElements().map((l) => attr(l, \"href\") || attr(l, \"src\") || l.innerText).join(\"\"));\n    });\n    return this;\n  }\n  async slotsInit() {\n    const getText = async (url) => this.fetch(url);\n    const onAttr = async (att, cb) => {\n      await (async (a) => a ? cb(a) : 0)(attr(this, att));\n    };\n    const embeddedTemplates = [...this.getElementsByTagName(\"template\")];\n    await onAttr(\"srcset\", (id) => this.innerHTML = `${document.getElementById(id)?.innerHTML}`);\n    await onAttr(\"src\", async (url) => this.innerHTML = await getText(url));\n    this.attachShadow({ mode: \"open\" });\n    const applyTemplate = (t) => this.applyTemplate(t);\n    embeddedTemplates.forEach(applyTemplate);\n    await onAttr(\"for\", (id) => applyTemplate(document.getElementById(id)));\n    await onAttr(\"code\", async (url) => {\n      const d = document.createElement(\"div\");\n      d.innerHTML = await getText(url);\n      const t = document.createElement(\"template\");\n      d.childNodes.forEach((n) => t.content.append(n));\n      applyTemplate(t);\n    });\n    return this;\n  }\n}"
         }
       ],
       "exports": [
+        {
+          "kind": "custom-element-definition",
+          "name": "shadow-dom-element",
+          "declaration": {
+            "name": "ShadowDomElement",
+            "module": "dist/src/shadow-dom-element.js"
+          }
+        },
         {
           "kind": "js",
           "name": "default",
           "declaration": {
             "name": "ShadowDomElement",
-            "module": "dist/src/shadow-dom-element.d.ts"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
-      "path": "dist/src/shadow-dom-element.js",
-      "declarations": [
-        {
-          "kind": "class",
-          "description": "",
-          "name": "c",
-          "members": [
-            {
-              "kind": "field",
-              "name": "promise"
-            },
-            {
-              "kind": "method",
-              "name": "fetch",
-              "parameters": [
-                {
-                  "name": "e"
-                }
-              ]
-            },
-            {
-              "kind": "method",
-              "name": "applyTemplate",
-              "parameters": [
-                {
-                  "name": "e"
-                }
-              ]
-            },
-            {
-              "kind": "method",
-              "name": "slotsInit"
-            }
-          ],
-          "superclass": {
-            "name": "HTMLElement"
-          },
-          "tagName": "shadow-dom-element",
-          "customElement": true
-        }
-      ],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "default",
-          "declaration": {
-            "name": "c",
             "module": "dist/src/shadow-dom-element.js"
-          }
-        },
-        {
-          "kind": "custom-element-definition",
-          "name": "shadow-dom-element",
-          "declaration": {
-            "name": "c",
-            "module": "dist/src/shadow-dom-element.js"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
-      "path": "dist/stories/index.stories.d.ts",
-      "declarations": [
-        {
-          "kind": "variable",
-          "name": "_default",
-          "type": {
-            "text": "{\r\n    title: string;\r\n    component: string;\r\n    argTypes: {\r\n        title: {\r\n            control: string;\r\n        };\r\n        counter: {\r\n            control: string;\r\n        };\r\n        textColor: {\r\n            control: string;\r\n        };\r\n    };\r\n}"
-          }
-        },
-        {
-          "kind": "variable",
-          "name": "Regular",
-          "type": {
-            "text": "Story<ArgTypes>"
-          }
-        },
-        {
-          "kind": "variable",
-          "name": "CustomTitle",
-          "type": {
-            "text": "Story<ArgTypes>"
-          }
-        },
-        {
-          "kind": "variable",
-          "name": "CustomCounter",
-          "type": {
-            "text": "Story<ArgTypes>"
-          }
-        },
-        {
-          "kind": "variable",
-          "name": "SlottedContent",
-          "type": {
-            "text": "Story<ArgTypes>"
-          }
-        }
-      ],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "default",
-          "declaration": {
-            "name": "_default",
-            "module": "dist/stories/index.stories.d.ts"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "Regular",
-          "declaration": {
-            "name": "Regular",
-            "module": "dist/stories/index.stories.d.ts"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "CustomTitle",
-          "declaration": {
-            "name": "CustomTitle",
-            "module": "dist/stories/index.stories.d.ts"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "CustomCounter",
-          "declaration": {
-            "name": "CustomCounter",
-            "module": "dist/stories/index.stories.d.ts"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "SlottedContent",
-          "declaration": {
-            "name": "SlottedContent",
-            "module": "dist/stories/index.stories.d.ts"
           }
         }
       ]
@@ -1225,24 +539,6 @@
           }
         }
       ]
-    },
-    {
-      "kind": "javascript-module",
-      "path": "dist/test/light-dom-element-test.test.d.ts",
-      "declarations": [],
-      "exports": []
-    },
-    {
-      "kind": "javascript-module",
-      "path": "dist/test/light-dom-element-ts.test.d.ts",
-      "declarations": [],
-      "exports": []
-    },
-    {
-      "kind": "javascript-module",
-      "path": "dist/test/shadow-dom-element-ts.test.d.ts",
-      "declarations": [],
-      "exports": []
     }
   ]
 }

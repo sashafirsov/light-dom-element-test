@@ -112,4 +112,30 @@ describe('LightDomElement test', () => {
         expect($('[slot="slot1"]', el).txt()).to.equal('heading 3 😌');
         expect($('[slot="slot2"]', el).txt()).to.equal('link 😃');
     });
+    it('slot attribute', async () => {
+        const el = await fixture(
+            html`<light-dom-element>
+                <template>
+                    <a href="coverage.svg"><slot name="abc" attribute="href"/></a>
+                </template>
+                <link slot="abc" href="link-href"/>
+            </light-dom-element>`
+        );
+        expect($('a', el).attr('href')).to.equal('link-href');
+    });
+    it('slot for & attribute', async () => {
+        const el = await fixture(
+            html`<light-dom-element>
+                <template>
+                    <img id="image-1"/>
+                    <slot name="image-link" for="image-1"  attribute="src"/></slot>
+                    <slot name="image-alt"  for="image-1"  attribute="alt"/></slot>
+                </template>
+                <link   slot="image-link" href="link-href" />
+                <i      slot="image-alt"  >alt text</i>
+            </light-dom-element>`
+        );
+        expect($('img', el).attr('src')).to.equal('link-href');
+        expect($('img', el).attr('alt')).to.equal('alt text');
+    });
 });

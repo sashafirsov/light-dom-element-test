@@ -1,26 +1,28 @@
 <!doctype html>
 <html lang="en-GB">
-<head>
-  <meta charset="utf-8">
+<head><meta charset="utf-8">
     <title>light-dom-element demo</title>
-  <style>
-    body {
-      background: #fafafa;
-    }
-  </style>
 </head>
 <body>
     <light-dom-element>
         <template>
-            <slot name="slot1"><h5>FAIL heading 5</h5></slot>
-            <slot name="slot2"><button >FAIL action</button></slot>
+            <slot name="slot1"><h5>FAIL heading 5 🤔</h5></slot>
+            link URL and title by slot<br/>
+            <a href="#" title="FAIL title ovverriding 🙄">
+                <slot name="link-url"   attribute="href"    hidden ></slot>
+                <slot name="link-title" attribute="title"   hidden ></slot>
+                <img alt="image without url" id="image-1" />
+            </a>
+            <slot name="image-alt" attribute="alt" for="image-1" hidden></slot>
+            <slot name="image-src" attribute="src" for="image-1" hidden></slot>
         </template>
-        <a slot="slot2" href="#">link</a>
-        <h3 slot="slot1" id="heading" >heading 3</h3>
+        <a slot="link-url" href="../doc.png" ></a>
+        <i slot="link-title"> Doc image title 😃   </i>
+        <i slot="image-alt" > img  alt   😌   </i>
+        <link slot="image-src" href="../doc.png" />
+        <h3 slot="slot1" >Doc image src and alt by slot </h3>
     </light-dom-element>
 
-    <script type="module">
-        import '../../src/light-dom-element.js';
-    </script>
+    <script type="module" src="../../src/light-dom-element.js"></script>
 </body>
 </html>

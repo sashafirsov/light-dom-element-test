@@ -39,3 +39,6 @@ export default class LightDomElement extends ShadowDomElement {
      */
     slotsInit(): Promise<LightDomElement>;
 }
+interface HTMLElementTagNameMap {
+    'light-dom-element': LightDomElement;
+}
