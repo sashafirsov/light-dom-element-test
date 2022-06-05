@@ -90,5 +90,5 @@ To run a local development server that serves the basic demo located in `demo/in
 
 [npm-image]:      https://img.shields.io/npm/v/light-dom-element-test.svg
 [npm-url]:        https://npmjs.org/package/light-dom-element-test
-[coverage-image]: https://unpkg.com/light-dom-element-test@0.0.5/coverage/coverage.svg
-[coverage-url]:   https://unpkg.com/light-dom-element-test@0.0.5/coverage/lcov-report/index.html
+[coverage-image]: https://unpkg.com/light-dom-element-test@0.0.7/coverage/coverage.svg
+[coverage-url]:   https://unpkg.com/light-dom-element-test@0.0.7/coverage/lcov-report/index.html
