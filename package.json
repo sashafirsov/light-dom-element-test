@@ -6,6 +6,7 @@
     "version": "0.0.7",
     "main": "dist/src/index.js",
     "module": "dist/src/index.js",
+    "homepage": "https://github.com/sashafirsov/light-dom-element-test",
     "exports": {
         ".": "./dist/src/index.js",
         "./light-dom-element-test.js": "./dist/src/light-dom-element-test.js"
