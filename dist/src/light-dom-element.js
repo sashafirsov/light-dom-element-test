@@ -330,11 +330,14 @@ var ShadowDomElement = class extends HTMLElement {
   applyTemplate(t) {
     const s = this.shadowRoot;
     s.appendChild(t.content.cloneNode(true));
+    this.postTemplateCallback(s);
+    return this;
+  }
+  postTemplateCallback(s) {
     s.querySelectorAll("slot[attribute]").forEach((a) => {
       let f = attr(a, "for"), s2 = f ? a.getRootNode().querySelector("#" + f) : a.parentElement;
       s2.setAttribute(attr(a, "attribute"), a.assignedElements().map((l) => attr(l, "href") || attr(l, "src") || l.innerText).join(""));
     });
-    return this;
   }
   async slotsInit() {
     const getText = async (url) => this.fetch(url);
@@ -361,15 +364,10 @@ var ShadowDomElement = class extends HTMLElement {
 window.customElements.define("shadow-dom-element", ShadowDomElement);
 
 // src/light-dom-element.js
-var attr2 = (el, name) => el.getAttribute(name);
 var LightDomElement = class extends ShadowDomElement {
   applyTemplate(t) {
     CssChain(this).template(t);
-    const s = this;
-    s.querySelectorAll("slot[attribute]").forEach((a) => {
-      let f = attr2(a, "for"), s2 = f ? a.getRootNode().querySelector("#" + f) : a.parentElement;
-      s2.setAttribute(attr2(a, "attribute"), a.assignedElements().map((l) => attr2(l, "href") || attr2(l, "src") || l.innerText).join(""));
-    });
+    this.postTemplateCallback(this);
     return this;
   }
   attachShadow() {

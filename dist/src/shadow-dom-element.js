@@ -12,11 +12,14 @@ var ShadowDomElement = class extends HTMLElement {
   applyTemplate(t) {
     const s = this.shadowRoot;
     s.appendChild(t.content.cloneNode(true));
+    this.postTemplateCallback(s);
+    return this;
+  }
+  postTemplateCallback(s) {
     s.querySelectorAll("slot[attribute]").forEach((a) => {
       let f = attr(a, "for"), s2 = f ? a.getRootNode().querySelector("#" + f) : a.parentElement;
       s2.setAttribute(attr(a, "attribute"), a.assignedElements().map((l) => attr(l, "href") || attr(l, "src") || l.innerText).join(""));
     });
-    return this;
   }
   async slotsInit() {
     const getText = async (url) => this.fetch(url);

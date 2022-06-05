@@ -3,7 +3,7 @@
     "description": "Webcomponent light-dom-element-test following open-wc recommendations",
     "license": "MIT",
     "author": "light-dom-element-test",
-    "version": "0.0.5",
+    "version": "0.0.7",
     "main": "dist/src/index.js",
     "module": "dist/src/index.js",
     "exports": {
@@ -19,15 +19,13 @@
         "lint": "eslint --ext .ts,.html . --ignore-path .gitignore && prettier \"**/*.ts\" --check --ignore-path .gitignore",
         "format": "eslint --ext .ts,.html . --fix --ignore-path .gitignore && prettier \"**/*.ts\" --write --ignore-path .gitignore",
         "test": "bash test.sh",
-        "test:watch": "tsc && concurrently -k -r \"tsc --watch --preserveWatchOutput\" \"wtr --watch\"",
-        "storybook": "tsc && concurrently -k -r \"tsc --watch --preserveWatchOutput\" \"wds -c .storybook/server.mjs\"",
-        "storybook:build": "tsc && build-storybook"
+        "test:watch": "tsc && concurrently -k -r \"tsc --watch --preserveWatchOutput\" \"wtr --watch\""
     },
     "dependencies": {
         "css-chain": "^1.1.7",
-        "light-dom-element": "^0.0.5",
+        "light-dom-element": "^0.0.7",
         "lit": "^2.2.5",
-        "shadow-dom-element": "0.0.6"
+        "shadow-dom-element": "0.0.7"
     },
     "devDependencies": {
         "@custom-elements-manifest/analyzer": "^0.6.3",
@@ -37,7 +35,6 @@
         "@typescript-eslint/eslint-plugin": "^5.27.0",
         "@typescript-eslint/parser": "^5.27.0",
         "@web/dev-server": "^0.1.31",
-        "@web/dev-server-storybook": "^0.5.1",
         "@web/test-runner": "^0.13.29",
         "concurrently": "^7.2.1",
         "esbuild": "^0.14.42",
